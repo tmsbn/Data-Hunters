@@ -38,7 +38,7 @@ def index(request):
 
 
 def show_all_data(request):
-    house_data = HouseData.objects.all()
+    house_data = list(HouseData.objects.all().values())
     prediction_model = p.build_model(house_data)
     return HttpResponse(prediction_model)
 

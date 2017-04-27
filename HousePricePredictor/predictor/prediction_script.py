@@ -1,8 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
-from django_pandas.io import read_frame
-from collections import OrderedDict
 
 PRIMARY_KEY_COL = 'no'
 dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district']
@@ -46,7 +44,7 @@ def proportion_range_generator(actual, predicted):
 
 def build_model(house_data):
     # Read the data Frame - this is a Django-Pandas method for convenience
-    df = read_frame(house_data)
+    df = pd.DataFrame(house_data)
 
     # Delete the primary key column
     del df[PRIMARY_KEY_COL]
