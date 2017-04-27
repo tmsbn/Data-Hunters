@@ -11,12 +11,14 @@ import os
 # Create your views here.
 
 PREDICTION_MODEL = None
+DF_DUMMIES = None
 
 
 def index(request):
     # if this is a POST request we need to process the form data
 
     global PREDICTION_MODEL
+    global DF_DUMMIES
 
     if request.method == 'POST':
 
@@ -26,8 +28,7 @@ def index(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            predicted_value = ps.get_prediction(form.cleaned_data, PREDICTION_MODEL)
-
+            predicted_value = ps.get_prediction(form.cleaned_data, PREDICTION_MODEL, DF_DUMMIES)
 
             # redirect to a new URL:
             return render(request, 'index.html', {'form': form, 'predicted_value': predicted_value})
@@ -36,7 +37,7 @@ def index(request):
     else:
 
         house_data = list(HouseData.objects.all().values())
-        PREDICTION_MODEL = ps.build_model(house_data)
+        PREDICTION_MODEL, DF_DUMMIES = ps.build_model(house_data)
         form = HouseForm()
 
     return render(request, 'index.html', {'form': form})

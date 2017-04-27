@@ -18,9 +18,12 @@ ranges = {
 }
 
 
-def get_prediction(cleaned_data, model):
+def get_prediction(cleaned_data, model, df_dummies):
     print(cleaned_data)
+    print(df_dummies)
+
     predicted_value = 100
+
     return predicted_value
 
 
@@ -74,4 +77,4 @@ def build_model(house_data):
     ranges_count = proportion_range_generator(actual_values, predicted_values)
     print(ranges_count)
 
-    return model
+    return model, df_dummies
