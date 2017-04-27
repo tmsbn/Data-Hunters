@@ -1,25 +1,42 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from collections import Counter
-from collections import OrderedDict
 from sklearn.tree import DecisionTreeRegressor
-from predictor.models import HouseData
 from django_pandas.io import read_frame
+from collections import OrderedDict
 
 PRIMARY_KEY_COL = 'no'
 dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district']
 target_columns = 'sales_price'
+
+ranges = {
+    'Land Use': (4, 19),
+    'Sold As Vacant': (20, 21),
+    'City': (22, 31),
+    'Square Footage': (0, 0),
+    'Tax District': (32, 38),
+    'Neighborhood': (1, 1),
+    'Land Value': (2, 2),
+    'Sale Price': (3, 3)
+}
+
+
+def get_prediction(form):
+    print(form)
+
+
+def get_choices():
+    choices_dict = {}
 
 
 def proportion_range_generator(actual, predicted):
     ranges_count = {'Excellent': 0, 'Good': 0, 'Ok': 0, 'Bad': 0}
     for i in range(len(actual)):
         proportion = actual[i] / predicted[i]
-        if 1/1.2 < proportion < 1.2:
+        if 1 / 1.2 < proportion < 1.2:
             ranges_count['Excellent'] += 1
-        elif 1/1.5 < proportion < 1.5:
+        elif 1 / 1.5 < proportion < 1.5:
             ranges_count['Good'] += 1
-        elif 1/2 < proportion < 2:
+        elif 1 / 2 < proportion < 2:
             ranges_count['Ok'] += 1
         else:
             ranges_count['Bad'] += 1
@@ -28,7 +45,6 @@ def proportion_range_generator(actual, predicted):
 
 
 def build_model(house_data):
-
     # Read the data Frame - this is a Django-Pandas method for convenience
     df = read_frame(house_data)
 

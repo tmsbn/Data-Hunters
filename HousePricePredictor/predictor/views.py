@@ -1,19 +1,45 @@
 from django.http import HttpResponse
 from predictor.models import HouseData
-from predictor.prediction_script import build_model
+from predictor.forms import HouseForm
+import predictor.prediction_script as p
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
 import csv
 import os
 
 
 # Create your views here.
 
+
 def index(request):
-    return HttpResponse("Hello, world!")
+    # if this is a POST request we need to process the form data
+
+    if request.method == 'POST':
+
+        # create a form instance and populate it with data from the request:
+        form = HouseForm(request.POST)
+        print(request.POST)
+
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+
+            # redirect to a new URL:
+            return render(request, 'index.html', {'form': form})
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        house_data = HouseData.objects.all()
+        p.build_model(house_data)
+        fields = HouseData._meta.get_fields()
+        form = HouseForm()
+
+    return render(request, 'index.html', {'form': form})
 
 
 def show_all_data(request):
     house_data = HouseData.objects.all()
-    prediction_model = build_model(house_data)
+    prediction_model = p.build_model(house_data)
     return HttpResponse(prediction_model)
 
 
