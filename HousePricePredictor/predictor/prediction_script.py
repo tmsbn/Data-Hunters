@@ -18,8 +18,10 @@ ranges = {
 }
 
 
-def get_prediction(form):
-    print(form)
+def get_prediction(cleaned_data, model):
+    print(cleaned_data)
+    predicted_value = 100
+    return predicted_value
 
 
 def get_choices():
@@ -43,7 +45,7 @@ def proportion_range_generator(actual, predicted):
 
 
 def build_model(house_data):
-    # Read the data Frame - this is a Django-Pandas method for convenience
+    # Read the data Frame -
     df = pd.DataFrame(house_data)
 
     # Delete the primary key column
@@ -70,5 +72,6 @@ def build_model(house_data):
 
     predicted_values = clf.predict(df_predict_values)
     ranges_count = proportion_range_generator(actual_values, predicted_values)
+    print(ranges_count)
 
-    return ranges_count.items()
+    return model

@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from predictor.models import HouseData
 from predictor.forms import HouseForm
-import predictor.prediction_script as p
+import predictor.prediction_script as ps
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 import csv
@@ -10,28 +10,33 @@ import os
 
 # Create your views here.
 
+PREDICTION_MODEL = None
+
 
 def index(request):
     # if this is a POST request we need to process the form data
+
+    global PREDICTION_MODEL
 
     if request.method == 'POST':
 
         # create a form instance and populate it with data from the request:
         form = HouseForm(request.POST)
-        print(request.POST)
 
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
+            predicted_value = ps.get_prediction(form.cleaned_data, PREDICTION_MODEL)
+
 
             # redirect to a new URL:
-            return render(request, 'index.html', {'form': form})
+            return render(request, 'index.html', {'form': form, 'predicted_value': predicted_value})
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        house_data = HouseData.objects.all()
-        p.build_model(house_data)
-        fields = HouseData._meta.get_fields()
+
+        house_data = list(HouseData.objects.all().values())
+        PREDICTION_MODEL = ps.build_model(house_data)
         form = HouseForm()
 
     return render(request, 'index.html', {'form': form})
@@ -39,7 +44,7 @@ def index(request):
 
 def show_all_data(request):
     house_data = list(HouseData.objects.all().values())
-    prediction_model = p.build_model(house_data)
+    prediction_model = ps.build_model(house_data)
     return HttpResponse(prediction_model)
 
 
