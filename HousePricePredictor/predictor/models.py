@@ -10,18 +10,18 @@ class HouseData(models.Model):
     city = models.CharField(max_length=20)
     square_footage = models.PositiveIntegerField(default=0,
                                                  validators=[
-                                                     MaxValueValidator(1000000),
+                                                     MaxValueValidator(10000000),
                                                      MinValueValidator(0)
                                                  ])
     tax_district = models.CharField(max_length=20)
     neighborhood = models.PositiveIntegerField(default=0,
                                                validators=[
-                                                   MaxValueValidator(1000000),
+                                                   MaxValueValidator(10000000),
                                                    MinValueValidator(0)
                                                ])
     land_value = models.PositiveIntegerField(default=0,
                                              validators=[
-                                                 MaxValueValidator(1000000),
+                                                 MaxValueValidator(10000000),
                                                  MinValueValidator(0)
                                              ])
     sales_price = models.IntegerField(default=0)

@@ -64,8 +64,7 @@ def clean_up_data(request):
 
 def show_all_data(request):
     house_data = list(HouseData.objects.all().values())
-    prediction_model = ps.build_model(house_data)
-    return HttpResponse(prediction_model)
+    return HttpResponse(len(house_data))
 
 
 def delete_data(request):

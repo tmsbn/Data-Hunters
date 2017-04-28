@@ -5,18 +5,18 @@ from sklearn.tree import _tree
 from collections import Counter
 
 PRIMARY_KEY_COL = 'no'
-dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district']
+dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district', 'neighborhood']
 target_column = 'sales_price'
 
 ranges = {
-    'land_use': (4, 19),
-    'sold_as_vacant': (20, 21),
-    'city': (22, 31),
-    'tax_district': (32, 38),
-    'square_footage': (3, 3),
-    'neighborhood': (1, 1),
+    'land_use': (3, 18),
+    'sold_as_vacant': (19, 20),
+    'city': (21, 30),
+    'tax_district': (31, 37),
+    'square_footage': (2, 2),
+    'neighborhood': (38, 212),
     'land_value': (0, 0),
-    'sales_price': (2, 2)
+    'sales_price': (1, 1)
 }
 
 
@@ -70,11 +70,11 @@ def proportion_range_generator(actual, predicted):
 def build_model(house_data):
     # Read the data Frame -
     df = pd.DataFrame(house_data)
-    counter = Counter(df['neighborhood'].values)
-    print(counter)
-
-    for key, value in counter.most_common():
-        print(key, end=',')
+    # counter = Counter(df['neighborhood'].values)
+    # print(counter)
+    #
+    # for key, value in counter.most_common():
+    #     print(key, end=',')
 
     # Delete the primary key column
     del df[PRIMARY_KEY_COL]
