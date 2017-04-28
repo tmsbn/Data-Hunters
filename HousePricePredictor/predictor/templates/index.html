@@ -8,16 +8,22 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 </head>
 <body>
+
 <div id="form">
+    <h1>House Price Predictor</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_ul }}
         <input type="submit" value="Submit" />
     </form>
 
+
     {% if predicted_value %}
-        <p> The Predicted value for your house is {{ predicted_value }}</p>
+      <div id="prediction">
+        <p> The Predicted value for your house is {{ predicted_value }} $</p>
+      </div>
     {% endif %}
+
 </div>
 </body>
 </html>

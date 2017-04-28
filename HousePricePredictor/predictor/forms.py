@@ -3,29 +3,40 @@ from predictor.models import HouseData
 
 
 class HouseForm(forms.Form):
-    land_use = forms.ChoiceField(label='land use',
+
+    blank_choice = (('', '---------'),)
+
+    land_use = forms.ChoiceField(label='',
                                  required=True,
-                                 choices=list(HouseData.objects.values_list('land_use', 'land_use').distinct()))
+                                 choices=[('', 'Land Use')] + list(HouseData.objects.values_list('land_use', 'land_use').distinct()))
 
-    sold_as_vacant = forms.ChoiceField(label='sold as vacant',
+    sold_as_vacant = forms.ChoiceField(label='',
                                        required=True,
-                                       choices=list(HouseData.objects.values_list('sold_as_vacant', 'sold_as_vacant').distinct()))
+                                       choices=[('', 'Sold as Vacant')] + list(HouseData.objects.values_list('sold_as_vacant', 'sold_as_vacant').distinct()))
 
-    city = forms.ChoiceField(label='City',
+    city = forms.ChoiceField(label='',
                              required=True,
-                             choices=list(HouseData.objects.values_list('city', 'city').distinct()))
+                             choices=[('', 'City')] + list(HouseData.objects.values_list('city', 'city').distinct()))
 
-    square_footage = forms.IntegerField(label='square footage', required=True, min_value=0, max_value=100000)
+    square_footage = forms.IntegerField(label='',
+                                        widget=forms.TextInput(attrs={'placeholder': 'square footage'}),
+                                        required=True,
+                                        min_value=0,
+                                        max_value=100000)
 
-    tax_district = forms.ChoiceField(label='tax district',
+    tax_district = forms.ChoiceField(label='',
                                      required=True,
-                                     choices=list(HouseData.objects.values_list('tax_district', 'tax_district').distinct()))
+                                     choices=[('', 'Tax District')] + list(HouseData.objects.values_list('tax_district', 'tax_district').distinct()))
 
-    neighborhood = forms.ChoiceField(label='neighborhood',
+    neighborhood = forms.ChoiceField(label='',
                                      required=True,
-                                     choices=list(HouseData.objects.values_list('neighborhood', 'neighborhood').distinct()))
+                                     choices=[('', 'Neighborhood')] + list(HouseData.objects.values_list('neighborhood', 'neighborhood').distinct().order_by('neighborhood')))
 
-    land_value = forms.IntegerField(required=True, label='land value', min_value=0, max_value=100000)
+    land_value = forms.IntegerField(required=True,
+                                    label='',
+                                    min_value=0,
+                                    max_value=100000,
+                                    widget=forms.TextInput(attrs={'placeholder': 'Land value'}))
 
     def __init__(self, *args, **kwargs):
 
