@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
+from sklearn.tree import _tree
 
 PRIMARY_KEY_COL = 'no'
 dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district']
@@ -22,7 +23,7 @@ def get_prediction(cleaned_data, model, df):
     predict_list = []
     digit_values = []
 
-    print(df.columns.values)
+    print(df)
 
     for idx, col in enumerate(ranges.keys()):
 
@@ -31,7 +32,6 @@ def get_prediction(cleaned_data, model, df):
 
         x, y = ranges[col]
         domain = df.columns.values[x: y + 1]
-
         if not type(cleaned_data[col]) is int:
             for val in domain:
                 val = val.split('_')[-1]
@@ -41,8 +41,8 @@ def get_prediction(cleaned_data, model, df):
                     predict_list.append(0)
         else:
             digit_values.append(cleaned_data[col])
-
     predicted_values = model.predict([digit_values + predict_list])
+    print(predicted_values)
     return predicted_values[0]
 
 
@@ -78,7 +78,7 @@ def build_model(house_data):
 
     # Split data into training and testing set
     df_train, df_test = train_test_split(df_dummies, test_size=0.3)
-
+    # print(df_test)
     # Remove the target column from the training data set
     df_target_values = df_train[target_column].values
     del df_train[target_column]
@@ -89,10 +89,37 @@ def build_model(house_data):
     del df_test[target_column]
     df_predict_values = df_test.values
 
-    model = DecisionTreeRegressor()
+    model = DecisionTreeRegressor(max_depth=10)
     fitted_model = model.fit(df_input_values, df_target_values)
+    print(df_test)
+    print('Creating Rules in Rule.txt')
+    opfile = open('Rule.txt', 'w')
+    tree_to_code(model.tree_, df_test.columns.values, opfile)
+    print('Rules created.')
 
     predicted_values = fitted_model.predict(df_predict_values)
     # ranges_count = proportion_range_generator(actual_values, predicted_values)
 
     return fitted_model, df_dummies
+
+
+def tree_to_code(tree_, feature_names, ofile):
+    feature_name = [
+        feature_names[i] if i != _tree.TREE_UNDEFINED else "undefined!"
+        for i in tree_.feature
+    ]
+    ofile.write("def tree({}):".format(", ".join(feature_names)) + "\n")
+
+    def recurse(node, depth):
+        indent = "  " * depth
+        if tree_.feature[node] != _tree.TREE_UNDEFINED:
+            name = feature_name[node]
+            threshold = tree_.threshold[node]
+            ofile.write("{}if {} <= {}:".format(indent, name, threshold) + "\n")
+            recurse(tree_.children_left[node], depth + 1)
+            ofile.write("{}else:  # if {} > {}".format(indent, name, threshold) + "\n")
+            recurse(tree_.children_right[node], depth + 1)
+        else:
+            ofile.write("{}return {}".format(indent, tree_.value[node]) + "\n")
+
+    recurse(0, 1)
