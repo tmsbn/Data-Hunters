@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.tree import _tree
+from collections import Counter
 
 PRIMARY_KEY_COL = 'no'
 dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district']
@@ -69,6 +70,11 @@ def proportion_range_generator(actual, predicted):
 def build_model(house_data):
     # Read the data Frame -
     df = pd.DataFrame(house_data)
+    counter = Counter(df['neighborhood'].values)
+    print(counter)
+
+    for key, value in counter.most_common():
+        print(key, end=',')
 
     # Delete the primary key column
     del df[PRIMARY_KEY_COL]
@@ -91,9 +97,10 @@ def build_model(house_data):
 
     model = DecisionTreeRegressor(max_depth=10)
     fitted_model = model.fit(df_input_values, df_target_values)
-    print(df_test)
     print('Creating Rules in Rule.txt')
+
     opfile = open('Rule.txt', 'w')
+
     tree_to_code(model.tree_, df_test.columns.values, opfile)
     print('Rules created.')
 

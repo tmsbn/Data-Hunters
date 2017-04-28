@@ -7,7 +7,6 @@ from django.http import HttpResponseRedirect
 import csv
 import os
 
-
 # Create your views here.
 
 PREDICTION_MODEL = None
@@ -27,7 +26,6 @@ def index(request):
 
         # check whether it's valid:
         if form.is_valid():
-
             print('got request again!')
             # process the data in form.cleaned_data as required
             predicted_value = ps.get_prediction(form.cleaned_data, PREDICTION_MODEL, DF_DUMMIES)
@@ -43,6 +41,23 @@ def index(request):
         form = HouseForm()
 
     return render(request, 'index.html', {'form': form})
+
+
+def clean_up_data(request):
+    neigh_to_clean = [1113, 107, 3312, 6751, 3611, 6727, 1611, 6251, 3246, 6341, 3829, 6911, 6711, 4056, 6626, 1111,
+                      3111, 6744, 6331,
+                      4287, 4311, 6432, 2211, 4060, 4061, 4069]
+
+    date_to_delete = HouseData.objects.filter(
+        neighborhood__in=neigh_to_clean)
+
+    before_len = len(HouseData.objects.all())
+
+    date_to_delete.delete()
+
+    after_len = len(HouseData.objects.all())
+
+    return HttpResponse(str(before_len) + ":" + str(after_len))
 
 
 def show_all_data(request):
