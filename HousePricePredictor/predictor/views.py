@@ -28,6 +28,7 @@ def index(request):
         if form.is_valid():
             print('got request again!')
             # process the data in form.cleaned_data as required
+
             predicted_value = ps.get_prediction(form.cleaned_data, PREDICTION_MODEL, DF_DUMMIES)
 
             # redirect to a new URL:
@@ -38,6 +39,7 @@ def index(request):
 
         house_data = list(HouseData.objects.all().values())
         PREDICTION_MODEL, DF_DUMMIES = ps.build_model(house_data)
+
         form = HouseForm()
 
     return render(request, 'index.html', {'form': form})

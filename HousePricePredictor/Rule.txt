@@ -1,618 +1,629 @@
 def tree(land_value, neighborhood, square_footage, land_use_CHURCH, land_use_DORMITORY, land_use_DUPLEX, land_use_FOREST, land_use_GREENBELT, land_use_MOBILE HOME, land_use_PARKING LOT, land_use_PARSONAGE, land_use_QUADPLEX, land_use_RESIDENTIAL COMBO, land_use_SINGLE FAMILY, land_use_SPLIT CLASS, land_use_TRIPLEX, land_use_VACANT COMMERCIAL LAND, land_use_VACANT RESIDENTIAL LAND, land_use_ZERO LOT LINE, sold_as_vacant_No, sold_as_vacant_Yes, city_ANTIOCH, city_BRENTWOOD, city_GOODLETTSVILLE, city_HERMITAGE, city_JOELTON, city_MADISON, city_MOUNT JULIET, city_NASHVILLE, city_OLD HICKORY, city_WHITES CREEK, tax_district_CITY OF BELLE MEADE, tax_district_CITY OF BERRY HILL, tax_district_CITY OF FOREST HILLS, tax_district_CITY OF GOODLETTSVILLE, tax_district_CITY OF OAK HILL, tax_district_GENERAL SERVICES DISTRICT, tax_district_URBAN SERVICES DISTRICT):
-  if land_value <= 173750.0:
+  if land_value <= 166459.5:
     if land_use_VACANT COMMERCIAL LAND <= 0.5:
-      if land_value <= 45850.0:
+      if land_value <= 45912.0:
         if land_value <= 27550.0:
           if neighborhood <= 1126.5:
             if neighborhood <= 726.0:
               if land_value <= 14000.0:
-                if sold_as_vacant_No <= 0.5:
-                  if land_value <= 11350.0:
-                    if square_footage <= 5880.0:
-                      return [[ 52291.66666667]]
-                    else:  # if square_footage > 5880.0
-                      return [[ 114329.16666667]]
-                  else:  # if land_value > 11350.0
-                    if square_footage <= 6969.5:
-                      return [[ 21032.94117647]]
-                    else:  # if square_footage > 6969.5
-                      return [[ 49750.]]
-                else:  # if sold_as_vacant_No > 0.5
+                if sold_as_vacant_Yes <= 0.5:
                   if land_use_VACANT RESIDENTIAL LAND <= 0.5:
                     if square_footage <= 13721.0:
-                      return [[ 109687.15129151]]
+                      return [[ 111237.38671875]]
                     else:  # if square_footage > 13721.0
-                      return [[ 203428.4]]
+                      return [[ 194523.66666667]]
                   else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                    if land_value <= 12500.0:
-                      return [[ 244644.70588235]]
-                    else:  # if land_value > 12500.0
-                      return [[ 143500.]]
-              else:  # if land_value > 14000.0
-                if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                  if square_footage <= 4573.5:
-                    if square_footage <= 2831.0:
-                      return [[ 236500.]]
-                    else:  # if square_footage > 2831.0
-                      return [[ 217250.]]
-                  else:  # if square_footage > 4573.5
-                    if neighborhood <= 276.0:
-                      return [[ 50000.]]
-                    else:  # if neighborhood > 276.0
-                      return [[ 223300.]]
-                else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                  return [[ 570000.]]
-            else:  # if neighborhood > 726.0
-              if square_footage <= 7187.0:
-                if square_footage <= 6316.0:
-                  if sold_as_vacant_Yes <= 0.5:
-                    if land_use_SINGLE FAMILY <= 0.5:
-                      return [[ 4400000.]]
-                    else:  # if land_use_SINGLE FAMILY > 0.5
-                      return [[ 1406309.85714286]]
-                  else:  # if sold_as_vacant_Yes > 0.5
-                    if square_footage <= 5880.0:
-                      return [[ 2232500.]]
-                    else:  # if square_footage > 5880.0
+                    if land_value <= 1400.0:
+                      return [[ 50.]]
+                    else:  # if land_value > 1400.0
+                      return [[ 228970.90909091]]
+                else:  # if sold_as_vacant_Yes > 0.5
+                  if land_value <= 10500.0:
+                    if land_value <= 8000.0:
+                      return [[ 71550.]]
+                    else:  # if land_value > 8000.0
+                      return [[ 840000.]]
+                  else:  # if land_value > 10500.0
+                    if square_footage <= 18512.5:
+                      return [[ 44846.93877551]]
+                    else:  # if square_footage > 18512.5
                       return [[ 175000.]]
+              else:  # if land_value > 14000.0
+                if sold_as_vacant_No <= 0.5:
+                  if neighborhood <= 176.0:
+                    return [[ 90000.]]
+                  else:  # if neighborhood > 176.0
+                    return [[ 840000.]]
+                else:  # if sold_as_vacant_No > 0.5
+                  if square_footage <= 2177.5:
+                    return [[ 289900.]]
+                  else:  # if square_footage > 2177.5
+                    if square_footage <= 2831.0:
+                      return [[ 81052.5]]
+                    else:  # if square_footage > 2831.0
+                      return [[ 205090.]]
+            else:  # if neighborhood > 726.0
+              if square_footage <= 6751.5:
+                if square_footage <= 6316.0:
+                  if square_footage <= 4355.5:
+                    if land_use_VACANT RESIDENTIAL LAND <= 0.5:
+                      return [[ 319584.5]]
+                    else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
+                      return [[ 2221500.]]
+                  else:  # if square_footage > 4355.5
+                    if sold_as_vacant_No <= 0.5:
+                      return [[ 2230000.]]
+                    else:  # if sold_as_vacant_No > 0.5
+                      return [[ 3090000.]]
                 else:  # if square_footage > 6316.0
-                  if square_footage <= 6751.5:
-                    if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                      return [[ 200750.]]
-                    else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                      return [[ 300714.28571429]]
-                  else:  # if square_footage > 6751.5
+                  if land_use_VACANT RESIDENTIAL LAND <= 0.5:
                     if land_use_SINGLE FAMILY <= 0.5:
-                      return [[ 375000.]]
+                      return [[ 251500.]]
                     else:  # if land_use_SINGLE FAMILY > 0.5
-                      return [[ 2212750.]]
-              else:  # if square_footage > 7187.0
-                return [[ 4400000.]]
-          else:  # if neighborhood > 1126.5
-            if land_value <= 24450.0:
-              if sold_as_vacant_Yes <= 0.5:
-                if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                  if square_footage <= 765131.0:
-                    if land_use_ZERO LOT LINE <= 0.5:
-                      return [[ 131906.53236654]]
-                    else:  # if land_use_ZERO LOT LINE > 0.5
-                      return [[ 96959.13307241]]
-                  else:  # if square_footage > 765131.0
-                    return [[ 1045000.]]
-                else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                  if square_footage <= 19384.0:
-                    if land_value <= 1850.0:
-                      return [[ 289872.5]]
-                    else:  # if land_value > 1850.0
-                      return [[ 148183.24468085]]
-                  else:  # if square_footage > 19384.0
-                    if square_footage <= 21562.0:
-                      return [[ 2040000.]]
-                    else:  # if square_footage > 21562.0
-                      return [[ 460093.44444444]]
-              else:  # if sold_as_vacant_Yes > 0.5
-                if square_footage <= 69260.0:
-                  if city_BRENTWOOD <= 0.5:
-                    if neighborhood <= 3476.5:
-                      return [[ 78285.7734375]]
-                    else:  # if neighborhood > 3476.5
-                      return [[ 44943.78]]
-                  else:  # if city_BRENTWOOD > 0.5
-                    return [[ 430000.]]
-                else:  # if square_footage > 69260.0
-                  if land_value <= 6569.5:
-                    return [[ 1200000.]]
-                  else:  # if land_value > 6569.5
-                    if city_HERMITAGE <= 0.5:
-                      return [[ 57750.]]
-                    else:  # if city_HERMITAGE > 0.5
-                      return [[ 125000.]]
-            else:  # if land_value > 24450.0
-              if land_use_FOREST <= 0.5:
-                if neighborhood <= 2776.5:
-                  if square_footage <= 59895.0:
+                      return [[ 168916.66666667]]
+                  else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
                     if sold_as_vacant_Yes <= 0.5:
-                      return [[ 224848.04195804]]
+                      return [[ 2575000.]]
                     else:  # if sold_as_vacant_Yes > 0.5
-                      return [[ 107797.14285714]]
-                  else:  # if square_footage > 59895.0
-                    return [[ 1300000.]]
-                else:  # if neighborhood > 2776.5
-                  if sold_as_vacant_No <= 0.5:
-                    if square_footage <= 104543.5:
-                      return [[ 61416.7826087]]
-                    else:  # if square_footage > 104543.5
-                      return [[ 320000.]]
-                  else:  # if sold_as_vacant_No > 0.5
+                      return [[ 206250.]]
+              else:  # if square_footage > 6751.5
+                if land_use_VACANT RESIDENTIAL LAND <= 0.5:
+                  if square_footage <= 7622.5:
+                    if land_use_SINGLE FAMILY <= 0.5:
+                      return [[ 525000.]]
+                    else:  # if land_use_SINGLE FAMILY > 0.5
+                      return [[ 25500.]]
+                  else:  # if square_footage > 7622.5
+                    return [[ 4400000.]]
+                else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
+                  return [[ 4400000.]]
+          else:  # if neighborhood > 1126.5
+            if land_value <= 24550.0:
+              if square_footage <= 724620.0:
+                if sold_as_vacant_Yes <= 0.5:
+                  if land_use_VACANT RESIDENTIAL LAND <= 0.5:
+                    if land_use_ZERO LOT LINE <= 0.5:
+                      return [[ 132029.18980593]]
+                    else:  # if land_use_ZERO LOT LINE > 0.5
+                      return [[ 94814.11417323]]
+                  else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
+                    if square_footage <= 23304.0:
+                      return [[ 186115.456]]
+                    else:  # if square_footage > 23304.0
+                      return [[ 592516.41666667]]
+                else:  # if sold_as_vacant_Yes > 0.5
+                  if square_footage <= 21344.0:
+                    if city_BRENTWOOD <= 0.5:
+                      return [[ 56621.77060932]]
+                    else:  # if city_BRENTWOOD > 0.5
+                      return [[ 430000.]]
+                  else:  # if square_footage > 21344.0
+                    if neighborhood <= 2226.5:
+                      return [[ 715000.]]
+                    else:  # if neighborhood > 2226.5
+                      return [[ 103778.55357143]]
+              else:  # if square_footage > 724620.0
+                if land_value <= 11321.5:
+                  return [[ 1210000.]]
+                else:  # if land_value > 11321.5
+                  return [[ 1045000.]]
+            else:  # if land_value > 24550.0
+              if neighborhood <= 2776.5:
+                if square_footage <= 59895.0:
+                  if sold_as_vacant_Yes <= 0.5:
+                    if neighborhood <= 2177.0:
+                      return [[ 205908.13677812]]
+                    else:  # if neighborhood > 2177.0
+                      return [[ 234785.06299213]]
+                  else:  # if sold_as_vacant_Yes > 0.5
+                    if land_value <= 26000.0:
+                      return [[ 152784.21052632]]
+                    else:  # if land_value > 26000.0
+                      return [[ 70115.38461538]]
+                else:  # if square_footage > 59895.0
+                  return [[ 1300000.]]
+              else:  # if neighborhood > 2776.5
+                if land_use_PARKING LOT <= 0.5:
+                  if sold_as_vacant_Yes <= 0.5:
                     if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                      return [[ 158167.76773567]]
+                      return [[ 158446.5210084]]
                     else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                      return [[ 360530.76923077]]
-              else:  # if land_use_FOREST > 0.5
-                return [[ 1500000.]]
+                      return [[ 300718.18181818]]
+                  else:  # if sold_as_vacant_Yes > 0.5
+                    if square_footage <= 114562.5:
+                      return [[ 55261.9137931]]
+                    else:  # if square_footage > 114562.5
+                      return [[ 320000.]]
+                else:  # if land_use_PARKING LOT > 0.5
+                  return [[ 750000.]]
         else:  # if land_value > 27550.0
           if neighborhood <= 1126.5:
-            if land_value <= 29750.0:
-              return [[ 4400000.]]
-            else:  # if land_value > 29750.0
-              if square_footage <= 8494.0:
-                if land_value <= 37500.0:
+            if neighborhood <= 1076.0:
+              if neighborhood <= 176.0:
+                if square_footage <= 13939.0:
+                  if sold_as_vacant_Yes <= 0.5:
+                    if square_footage <= 8494.0:
+                      return [[ 252561.91269841]]
+                    else:  # if square_footage > 8494.0
+                      return [[ 325938.58823529]]
+                  else:  # if sold_as_vacant_Yes > 0.5
+                    if square_footage <= 4573.5:
+                      return [[ 267323.52941176]]
+                    else:  # if square_footage > 4573.5
+                      return [[ 161777.77777778]]
+                else:  # if square_footage > 13939.0
+                  if sold_as_vacant_No <= 0.5:
+                    return [[ 1150000.]]
+                  else:  # if sold_as_vacant_No > 0.5
+                    return [[ 150000.]]
+              else:  # if neighborhood > 176.0
+                if land_value <= 30750.0:
+                  return [[ 35000.]]
+                else:  # if land_value > 30750.0
                   if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                    if square_footage <= 5444.5:
-                      return [[ 217333.33333333]]
-                    else:  # if square_footage > 5444.5
-                      return [[ 323806.81818182]]
+                    if square_footage <= 8494.0:
+                      return [[ 333308.92857143]]
+                    else:  # if square_footage > 8494.0
+                      return [[ 426846.15384615]]
                   else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
                     if square_footage <= 8058.0:
                       return [[ 383006.33333333]]
                     else:  # if square_footage > 8058.0
-                      return [[ 685000.]]
-                else:  # if land_value > 37500.0
-                  if neighborhood <= 576.0:
-                    if land_use_ZERO LOT LINE <= 0.5:
-                      return [[ 259695.80625]]
-                    else:  # if land_use_ZERO LOT LINE > 0.5
-                      return [[ 382300.]]
-                  else:  # if neighborhood > 576.0
-                    if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                      return [[ 153500.]]
-                    else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                      return [[ 70500.]]
-              else:  # if square_footage > 8494.0
-                if square_footage <= 10236.0:
-                  if neighborhood <= 176.0:
-                    if sold_as_vacant_Yes <= 0.5:
-                      return [[ 399129.26315789]]
-                    else:  # if sold_as_vacant_Yes > 0.5
-                      return [[ 156666.66666667]]
-                  else:  # if neighborhood > 176.0
-                    if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                      return [[ 387777.77777778]]
-                    else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                      return [[ 720000.]]
-                else:  # if square_footage > 10236.0
-                  if neighborhood <= 576.0:
-                    if square_footage <= 11543.0:
-                      return [[ 144833.33333333]]
-                    else:  # if square_footage > 11543.0
-                      return [[ 242250.]]
-                  else:  # if neighborhood > 576.0
-                    return [[ 450000.]]
+                      return [[ 622000.]]
+            else:  # if neighborhood > 1076.0
+              return [[ 4400000.]]
           else:  # if neighborhood > 1126.5
             if land_value <= 34150.0:
-              if land_use_RESIDENTIAL COMBO <= 0.5:
-                if sold_as_vacant_Yes <= 0.5:
-                  if city_NASHVILLE <= 0.5:
-                    if land_value <= 29200.0:
-                      return [[ 155857.86111111]]
-                    else:  # if land_value > 29200.0
-                      return [[ 173462.39010989]]
-                  else:  # if city_NASHVILLE > 0.5
-                    if square_footage <= 72744.5:
-                      return [[ 199646.77578475]]
-                    else:  # if square_footage > 72744.5
-                      return [[ 358425.]]
-                else:  # if sold_as_vacant_Yes > 0.5
+              if square_footage <= 63815.0:
+                if sold_as_vacant_No <= 0.5:
                   if neighborhood <= 3329.0:
                     return [[ 342500.]]
                   else:  # if neighborhood > 3329.0
-                    if square_footage <= 5226.5:
-                      return [[ 150000.]]
-                    else:  # if square_footage > 5226.5
-                      return [[ 55806.25]]
-              else:  # if land_use_RESIDENTIAL COMBO > 0.5
-                if square_footage <= 38986.0:
-                  if square_footage <= 11761.0:
-                    return [[ 157500.]]
-                  else:  # if square_footage > 11761.0
-                    return [[ 30000.]]
-                else:  # if square_footage > 38986.0
+                    if neighborhood <= 3628.5:
+                      return [[ 126750.]]
+                    else:  # if neighborhood > 3628.5
+                      return [[ 56597.21052632]]
+                else:  # if sold_as_vacant_No > 0.5
+                  if city_NASHVILLE <= 0.5:
+                    if neighborhood <= 6926.5:
+                      return [[ 183753.19191919]]
+                    else:  # if neighborhood > 6926.5
+                      return [[ 159812.39622642]]
+                  else:  # if city_NASHVILLE > 0.5
+                    if land_use_SINGLE FAMILY <= 0.5:
+                      return [[ 166036.92380952]]
+                    else:  # if land_use_SINGLE FAMILY > 0.5
+                      return [[ 202294.74778459]]
+              else:  # if square_footage > 63815.0
+                if square_footage <= 64468.5:
                   return [[ 2040000.]]
+                else:  # if square_footage > 64468.5
+                  if neighborhood <= 4130.5:
+                    if neighborhood <= 4129.5:
+                      return [[ 237725.]]
+                    else:  # if neighborhood > 4129.5
+                      return [[ 1151666.66666667]]
+                  else:  # if neighborhood > 4130.5
+                    if sold_as_vacant_No <= 0.5:
+                      return [[ 61000.]]
+                    else:  # if sold_as_vacant_No > 0.5
+                      return [[ 137184.2]]
             else:  # if land_value > 34150.0
-              if land_value <= 34350.0:
-                if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                  return [[ 231000.]]
-                else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                  return [[ 2040000.]]
-              else:  # if land_value > 34350.0
+              if square_footage <= 88208.5:
                 if tax_district_URBAN SERVICES DISTRICT <= 0.5:
-                  if sold_as_vacant_No <= 0.5:
-                    if city_GOODLETTSVILLE <= 0.5:
-                      return [[ 45710.]]
-                    else:  # if city_GOODLETTSVILLE > 0.5
-                      return [[ 134950.]]
-                  else:  # if sold_as_vacant_No > 0.5
+                  if sold_as_vacant_Yes <= 0.5:
                     if city_WHITES CREEK <= 0.5:
-                      return [[ 208748.07002188]]
+                      return [[ 204285.13583138]]
                     else:  # if city_WHITES CREEK > 0.5
                       return [[ 503950.]]
+                  else:  # if sold_as_vacant_Yes > 0.5
+                    if neighborhood <= 6946.0:
+                      return [[ 37583.33333333]]
+                    else:  # if neighborhood > 6946.0
+                      return [[ 55000.]]
                 else:  # if tax_district_URBAN SERVICES DISTRICT > 0.5
-                  if square_footage <= 110424.0:
-                    if land_value <= 37300.0:
-                      return [[ 232171.96790757]]
-                    else:  # if land_value > 37300.0
-                      return [[ 260038.3531856]]
-                  else:  # if square_footage > 110424.0
-                    if square_footage <= 113909.0:
+                  if land_value <= 36700.0:
+                    if square_footage <= 67518.0:
+                      return [[ 225870.26166667]]
+                    else:  # if square_footage > 67518.0
+                      return [[ 700000.]]
+                  else:  # if land_value > 36700.0
+                    if square_footage <= 13285.5:
+                      return [[ 243297.47478261]]
+                    else:  # if square_footage > 13285.5
+                      return [[ 268822.75208914]]
+              else:  # if square_footage > 88208.5
+                if neighborhood <= 3527.5:
+                  if sold_as_vacant_Yes <= 0.5:
+                    if square_footage <= 115216.0:
                       return [[ 2040000.]]
-                    else:  # if square_footage > 113909.0
-                      return [[ 404300.]]
-      else:  # if land_value > 45850.0
-        if land_value <= 116350.0:
-          if sold_as_vacant_Yes <= 0.5:
-            if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-              if square_footage <= 239797.0:
-                if land_value <= 71700.0:
-                  if neighborhood <= 1069.5:
-                    if square_footage <= 8711.5:
-                      return [[ 397956.]]
-                    else:  # if square_footage > 8711.5
-                      return [[ 630612.5]]
-                  else:  # if neighborhood > 1069.5
-                    if land_use_QUADPLEX <= 0.5:
-                      return [[ 306054.53944954]]
-                    else:  # if land_use_QUADPLEX > 0.5
-                      return [[ 721666.66666667]]
-                else:  # if land_value > 71700.0
-                  if neighborhood <= 3176.5:
-                    if square_footage <= 41599.5:
-                      return [[ 370034.59775281]]
-                    else:  # if square_footage > 41599.5
-                      return [[ 1500000.]]
-                  else:  # if neighborhood > 3176.5
-                    if neighborhood <= 7128.5:
-                      return [[ 317720.02380952]]
-                    else:  # if neighborhood > 7128.5
-                      return [[ 447738.46153846]]
-              else:  # if square_footage > 239797.0
-                if neighborhood <= 3798.5:
-                  if land_use_SINGLE FAMILY <= 0.5:
-                    return [[ 1612500.]]
-                  else:  # if land_use_SINGLE FAMILY > 0.5
-                    return [[ 2040000.]]
-                else:  # if neighborhood > 3798.5
-                  if land_use_SPLIT CLASS <= 0.5:
-                    if land_use_GREENBELT <= 0.5:
-                      return [[ 328690.]]
-                    else:  # if land_use_GREENBELT > 0.5
-                      return [[ 780000.]]
-                  else:  # if land_use_SPLIT CLASS > 0.5
-                    return [[ 1200000.]]
-            else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-              if square_footage <= 98663.0:
-                if neighborhood <= 1676.5:
-                  if land_value <= 61750.0:
-                    return [[ 200000.]]
-                  else:  # if land_value > 61750.0
-                    if square_footage <= 8276.0:
-                      return [[ 312181.]]
-                    else:  # if square_footage > 8276.0
-                      return [[ 360000.]]
-                else:  # if neighborhood > 1676.5
-                  if neighborhood <= 4228.5:
-                    if square_footage <= 12196.0:
-                      return [[ 444264.5]]
-                    else:  # if square_footage > 12196.0
-                      return [[ 842500.]]
-                  else:  # if neighborhood > 4228.5
-                    if city_NASHVILLE <= 0.5:
-                      return [[ 550000.]]
-                    else:  # if city_NASHVILLE > 0.5
-                      return [[ 253833.2]]
-              else:  # if square_footage > 98663.0
-                if square_footage <= 135036.0:
-                  return [[ 12350000.]]
-                else:  # if square_footage > 135036.0
-                  if square_footage <= 349786.5:
-                    if square_footage <= 155291.0:
-                      return [[ 500000.]]
-                    else:  # if square_footage > 155291.0
-                      return [[ 235000.]]
-                  else:  # if square_footage > 349786.5
-                    return [[ 2040000.]]
-          else:  # if sold_as_vacant_Yes > 0.5
+                    else:  # if square_footage > 115216.0
+                      return [[ 1212500.]]
+                  else:  # if sold_as_vacant_Yes > 0.5
+                    if square_footage <= 123274.0:
+                      return [[ 375000.]]
+                    else:  # if square_footage > 123274.0
+                      return [[ 90000.]]
+                else:  # if neighborhood > 3527.5
+                  if square_footage <= 158122.5:
+                    if land_value <= 41100.0:
+                      return [[ 152033.33333333]]
+                    else:  # if land_value > 41100.0
+                      return [[ 245875.]]
+                  else:  # if square_footage > 158122.5
+                    if neighborhood <= 4529.0:
+                      return [[ 216945.]]
+                    else:  # if neighborhood > 4529.0
+                      return [[ 377000.]]
+      else:  # if land_value > 45912.0
+        if land_value <= 116250.0:
+          if sold_as_vacant_No <= 0.5:
             if neighborhood <= 676.0:
               if square_footage <= 15028.0:
-                return [[ 840000.]]
-              else:  # if square_footage > 15028.0
                 return [[ 570000.]]
+              else:  # if square_footage > 15028.0
+                if square_footage <= 18512.5:
+                  return [[ 300000.]]
+                else:  # if square_footage > 18512.5
+                  return [[ 570000.]]
             else:  # if neighborhood > 676.0
               if tax_district_URBAN SERVICES DISTRICT <= 0.5:
-                if land_value <= 76300.0:
-                  if square_footage <= 196673.0:
-                    if square_footage <= 65557.5:
-                      return [[ 64687.5]]
-                    else:  # if square_footage > 65557.5
-                      return [[ 25562.5]]
-                  else:  # if square_footage > 196673.0
-                    if square_footage <= 347173.0:
-                      return [[ 133000.]]
-                    else:  # if square_footage > 347173.0
+                if land_value <= 78050.0:
+                  if square_footage <= 408592.5:
+                    if neighborhood <= 6877.5:
+                      return [[ 62833.33333333]]
+                    else:  # if neighborhood > 6877.5
+                      return [[ 34512.5]]
+                  else:  # if square_footage > 408592.5
+                    if city_HERMITAGE <= 0.5:
                       return [[ 100000.]]
-                else:  # if land_value > 76300.0
-                  if square_footage <= 354578.0:
+                    else:  # if city_HERMITAGE > 0.5
+                      return [[ 78000.]]
+                else:  # if land_value > 78050.0
+                  if square_footage <= 155290.5:
+                    if neighborhood <= 3896.5:
+                      return [[ 65000.]]
+                    else:  # if neighborhood > 3896.5
+                      return [[ 102557.14285714]]
+                  else:  # if square_footage > 155290.5
                     if city_NASHVILLE <= 0.5:
-                      return [[ 117725.]]
+                      return [[ 105475.]]
                     else:  # if city_NASHVILLE > 0.5
-                      return [[ 91000.]]
-                  else:  # if square_footage > 354578.0
-                    if city_GOODLETTSVILLE <= 0.5:
-                      return [[ 72800.]]
-                    else:  # if city_GOODLETTSVILLE > 0.5
-                      return [[ 50000.]]
+                      return [[ 318000.]]
               else:  # if tax_district_URBAN SERVICES DISTRICT > 0.5
-                if land_value <= 85550.0:
-                  if land_value <= 49650.0:
-                    if square_footage <= 159865.0:
-                      return [[ 320000.]]
-                    else:  # if square_footage > 159865.0
-                      return [[ 375000.]]
-                  else:  # if land_value > 49650.0
-                    if neighborhood <= 3433.0:
-                      return [[ 167681.6875]]
-                    else:  # if neighborhood > 3433.0
-                      return [[ 86500.]]
-                else:  # if land_value > 85550.0
-                  if land_value <= 95200.0:
+                if neighborhood <= 4276.5:
+                  if land_value <= 54950.0:
+                    if square_footage <= 7840.5:
+                      return [[ 97500.]]
+                    else:  # if square_footage > 7840.5
+                      return [[ 302441.57142857]]
+                  else:  # if land_value > 54950.0
                     if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                      return [[ 385000.]]
+                      return [[ 235980.]]
                     else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                      return [[ 550000.]]
-                  else:  # if land_value > 95200.0
-                    if land_value <= 102500.0:
-                      return [[ 45000.]]
-                    else:  # if land_value > 102500.0
+                      return [[ 120218.18181818]]
+                else:  # if neighborhood > 4276.5
+                  if square_footage <= 137213.5:
+                    if land_value <= 92500.0:
+                      return [[ 90000.]]
+                    else:  # if land_value > 92500.0
                       return [[ 261625.]]
-        else:  # if land_value > 116350.0
+                  else:  # if square_footage > 137213.5
+                    if land_value <= 75150.0:
+                      return [[ 320000.]]
+                    else:  # if land_value > 75150.0
+                      return [[ 550000.]]
+          else:  # if sold_as_vacant_No > 0.5
+            if land_use_VACANT RESIDENTIAL LAND <= 0.5:
+              if land_value <= 70250.0:
+                if land_use_QUADPLEX <= 0.5:
+                  if neighborhood <= 1076.0:
+                    if square_footage <= 7622.5:
+                      return [[ 389193.33333333]]
+                    else:  # if square_footage > 7622.5
+                      return [[ 462250.]]
+                  else:  # if neighborhood > 1076.0
+                    if neighborhood <= 1676.0:
+                      return [[ 263325.81927711]]
+                    else:  # if neighborhood > 1676.0
+                      return [[ 313497.23160173]]
+                else:  # if land_use_QUADPLEX > 0.5
+                  if square_footage <= 8711.5:
+                    return [[ 495000.]]
+                  else:  # if square_footage > 8711.5
+                    return [[ 835000.]]
+              else:  # if land_value > 70250.0
+                if neighborhood <= 8276.5:
+                  if land_use_CHURCH <= 0.5:
+                    if neighborhood <= 1626.5:
+                      return [[ 258958.06451613]]
+                    else:  # if neighborhood > 1626.5
+                      return [[ 354702.1587057]]
+                  else:  # if land_use_CHURCH > 0.5
+                    if neighborhood <= 6830.5:
+                      return [[ 1281250.]]
+                    else:  # if neighborhood > 6830.5
+                      return [[ 152500.]]
+                else:  # if neighborhood > 8276.5
+                  return [[ 1325000.]]
+            else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
+              if land_value <= 53300.0:
+                if tax_district_URBAN SERVICES DISTRICT <= 0.5:
+                  if city_HERMITAGE <= 0.5:
+                    return [[ 195000.]]
+                  else:  # if city_HERMITAGE > 0.5
+                    return [[ 500000.]]
+                else:  # if tax_district_URBAN SERVICES DISTRICT > 0.5
+                  return [[ 12350000.]]
+              else:  # if land_value > 53300.0
+                if city_BRENTWOOD <= 0.5:
+                  if tax_district_GENERAL SERVICES DISTRICT <= 0.5:
+                    if land_value <= 62100.0:
+                      return [[ 251300.]]
+                    else:  # if land_value > 62100.0
+                      return [[ 357670.5625]]
+                  else:  # if tax_district_GENERAL SERVICES DISTRICT > 0.5
+                    if city_WHITES CREEK <= 0.5:
+                      return [[ 98400.]]
+                    else:  # if city_WHITES CREEK > 0.5
+                      return [[ 250000.]]
+                else:  # if city_BRENTWOOD > 0.5
+                  return [[ 727500.]]
+        else:  # if land_value > 116250.0
           if neighborhood <= 3896.5:
-            if land_use_RESIDENTIAL COMBO <= 0.5:
-              if sold_as_vacant_No <= 0.5:
-                if land_use_SINGLE FAMILY <= 0.5:
-                  if land_value <= 138750.0:
-                    if square_footage <= 10236.5:
-                      return [[ 770000.]]
-                    else:  # if square_footage > 10236.5
-                      return [[ 388333.33333333]]
-                  else:  # if land_value > 138750.0
-                    if neighborhood <= 2076.0:
-                      return [[ 327500.]]
-                    else:  # if neighborhood > 2076.0
-                      return [[ 279950.]]
-                else:  # if land_use_SINGLE FAMILY > 0.5
-                  if square_footage <= 9582.5:
-                    if square_footage <= 5880.5:
-                      return [[ 170000.]]
-                    else:  # if square_footage > 5880.5
-                      return [[ 257090.90909091]]
-                  else:  # if square_footage > 9582.5
-                    if square_footage <= 10889.5:
-                      return [[ 450566.66666667]]
-                    else:  # if square_footage > 10889.5
-                      return [[ 175000.]]
-              else:  # if sold_as_vacant_No > 0.5
-                if land_use_SPLIT CLASS <= 0.5:
-                  if land_use_DUPLEX <= 0.5:
-                    if neighborhood <= 2277.0:
-                      return [[ 511119.23837209]]
-                    else:  # if neighborhood > 2277.0
-                      return [[ 440606.78588808]]
-                  else:  # if land_use_DUPLEX > 0.5
-                    if square_footage <= 7187.0:
-                      return [[ 1258750.]]
-                    else:  # if square_footage > 7187.0
-                      return [[ 377039.51724138]]
-                else:  # if land_use_SPLIT CLASS > 0.5
-                  return [[ 1135000.]]
-            else:  # if land_use_RESIDENTIAL COMBO > 0.5
-              if land_value <= 133500.0:
+            if square_footage <= 23522.0:
+              if land_use_SPLIT CLASS <= 0.5:
+                if neighborhood <= 1876.0:
+                  if sold_as_vacant_Yes <= 0.5:
+                    if land_use_SINGLE FAMILY <= 0.5:
+                      return [[ 422590.78947368]]
+                    else:  # if land_use_SINGLE FAMILY > 0.5
+                      return [[ 510943.20625]]
+                  else:  # if sold_as_vacant_Yes > 0.5
+                    if land_use_VACANT RESIDENTIAL LAND <= 0.5:
+                      return [[ 234000.]]
+                    else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
+                      return [[ 400500.]]
+                else:  # if neighborhood > 1876.0
+                  if sold_as_vacant_No <= 0.5:
+                    if square_footage <= 9582.5:
+                      return [[ 259457.14285714]]
+                    else:  # if square_footage > 9582.5
+                      return [[ 560566.66666667]]
+                  else:  # if sold_as_vacant_No > 0.5
+                    if land_value <= 147850.0:
+                      return [[ 405897.88095238]]
+                    else:  # if land_value > 147850.0
+                      return [[ 454122.01360544]]
+              else:  # if land_use_SPLIT CLASS > 0.5
+                return [[ 1135000.]]
+            else:  # if square_footage > 23522.0
+              if land_value <= 118800.0:
                 return [[ 2040850.]]
-              else:  # if land_value > 133500.0
-                if neighborhood <= 2326.0:
-                  if land_value <= 152000.0:
-                    return [[ 400000.]]
-                  else:  # if land_value > 152000.0
-                    return [[ 345000.]]
-                else:  # if neighborhood > 2326.0
-                  if square_footage <= 21344.0:
-                    return [[ 725000.]]
-                  else:  # if square_footage > 21344.0
-                    return [[ 750000.]]
+              else:  # if land_value > 118800.0
+                if square_footage <= 25264.5:
+                  return [[ 900000.]]
+                else:  # if square_footage > 25264.5
+                  if land_value <= 121800.0:
+                    return [[ 850000.]]
+                  else:  # if land_value > 121800.0
+                    if land_use_VACANT RESIDENTIAL LAND <= 0.5:
+                      return [[ 561495.66666667]]
+                    else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
+                      return [[ 365000.]]
           else:  # if neighborhood > 3896.5
-            if land_value <= 169400.0:
-              if city_ANTIOCH <= 0.5:
-                if land_use_SINGLE FAMILY <= 0.5:
-                  if tax_district_URBAN SERVICES DISTRICT <= 0.5:
-                    if land_value <= 140500.0:
-                      return [[ 108000.]]
-                    else:  # if land_value > 140500.0
-                      return [[ 230000.]]
-                  else:  # if tax_district_URBAN SERVICES DISTRICT > 0.5
-                    if land_value <= 130900.0:
-                      return [[ 645000.]]
-                    else:  # if land_value > 130900.0
-                      return [[ 286032.5]]
-                else:  # if land_use_SINGLE FAMILY > 0.5
-                  if land_value <= 140000.0:
-                    if square_footage <= 53796.5:
-                      return [[ 396189.72222222]]
-                    else:  # if square_footage > 53796.5
-                      return [[ 482504.76190476]]
-                  else:  # if land_value > 140000.0
-                    if square_footage <= 21779.5:
-                      return [[ 242500.]]
-                    else:  # if square_footage > 21779.5
-                      return [[ 352941.16176471]]
-              else:  # if city_ANTIOCH > 0.5
-                if sold_as_vacant_No <= 0.5:
-                  return [[ 1600000.]]
-                else:  # if sold_as_vacant_No > 0.5
-                  return [[ 119900.]]
-            else:  # if land_value > 169400.0
-              if neighborhood <= 8278.5:
-                if neighborhood <= 4428.5:
-                  if square_footage <= 60330.5:
-                    if square_footage <= 58370.0:
-                      return [[ 420036.9047619]]
-                    else:  # if square_footage > 58370.0
-                      return [[ 554500.]]
-                  else:  # if square_footage > 60330.5
-                    return [[ 860000.]]
-                else:  # if neighborhood > 4428.5
-                  if square_footage <= 25917.5:
-                    if square_footage <= 17641.5:
-                      return [[ 475265.22222222]]
-                    else:  # if square_footage > 17641.5
-                      return [[ 373120.]]
-                  else:  # if square_footage > 25917.5
+            if land_use_SINGLE FAMILY <= 0.5:
+              if tax_district_GENERAL SERVICES DISTRICT <= 0.5:
+                if land_value <= 123000.0:
+                  return [[ 550000.]]
+                else:  # if land_value > 123000.0
+                  if city_GOODLETTSVILLE <= 0.5:
+                    if neighborhood <= 4426.5:
+                      return [[ 345166.66666667]]
+                    else:  # if neighborhood > 4426.5
+                      return [[ 261367.16666667]]
+                  else:  # if city_GOODLETTSVILLE > 0.5
+                    return [[ 56000.]]
+              else:  # if tax_district_GENERAL SERVICES DISTRICT > 0.5
+                if land_value <= 121500.0:
+                  if sold_as_vacant_No <= 0.5:
+                    return [[ 315000.]]
+                  else:  # if sold_as_vacant_No > 0.5
+                    return [[ 126000.]]
+                else:  # if land_value > 121500.0
+                  if neighborhood <= 5181.5:
+                    return [[ 85000.]]
+                  else:  # if neighborhood > 5181.5
+                    return [[ 100000.]]
+            else:  # if land_use_SINGLE FAMILY > 0.5
+              if square_footage <= 52925.0:
+                if square_footage <= 32887.5:
+                  if land_value <= 153750.0:
+                    if neighborhood <= 4427.5:
+                      return [[ 465000.]]
+                    else:  # if neighborhood > 4427.5
+                      return [[ 300750.]]
+                  else:  # if land_value > 153750.0
+                    if square_footage <= 20473.0:
+                      return [[ 235000.]]
+                    else:  # if square_footage > 20473.0
+                      return [[ 225000.]]
+                else:  # if square_footage > 32887.5
+                  if square_footage <= 41164.0:
                     if neighborhood <= 4429.5:
-                      return [[ 803425.]]
+                      return [[ 413473.025]]
                     else:  # if neighborhood > 4429.5
-                      return [[ 452990.]]
-              else:  # if neighborhood > 8278.5
-                return [[ 20000.]]
+                      return [[ 521950.]]
+                  else:  # if square_footage > 41164.0
+                    if neighborhood <= 4429.0:
+                      return [[ 360466.02777778]]
+                    else:  # if neighborhood > 4429.0
+                      return [[ 411643.625]]
+              else:  # if square_footage > 52925.0
+                if land_value <= 139500.0:
+                  if square_footage <= 65122.0:
+                    if square_footage <= 58805.5:
+                      return [[ 492580.]]
+                    else:  # if square_footage > 58805.5
+                      return [[ 1054999.5]]
+                  else:  # if square_footage > 65122.0
+                    if square_footage <= 202989.0:
+                      return [[ 254166.66666667]]
+                    else:  # if square_footage > 202989.0
+                      return [[ 452180.]]
+                else:  # if land_value > 139500.0
+                  if neighborhood <= 6388.5:
+                    if neighborhood <= 4631.0:
+                      return [[ 375452.77777778]]
+                    else:  # if neighborhood > 4631.0
+                      return [[ 257500.]]
+                  else:  # if neighborhood > 6388.5
+                    if land_value <= 161900.0:
+                      return [[ 543180.]]
+                    else:  # if land_value > 161900.0
+                      return [[ 299900.]]
     else:  # if land_use_VACANT COMMERCIAL LAND > 0.5
-      if square_footage <= 8058.0:
+      if square_footage <= 8276.0:
         return [[ 9500000.]]
-      else:  # if square_footage > 8058.0
-        return [[ 275000.]]
-  else:  # if land_value > 173750.0
-    if land_value <= 450500.0:
+      else:  # if square_footage > 8276.0
+        if land_value <= 35000.0:
+          return [[ 325000.]]
+        else:  # if land_value > 35000.0
+          return [[ 625000.]]
+  else:  # if land_value > 166459.5
+    if land_value <= 450300.0:
       if square_footage <= 1492801.0:
-        if land_value <= 287100.0:
-          if neighborhood <= 2227.5:
-            if square_footage <= 7622.5:
-              if land_value <= 195000.0:
-                if square_footage <= 7187.0:
-                  if square_footage <= 5880.0:
-                    if square_footage <= 4573.5:
-                      return [[ 600000.]]
-                    else:  # if square_footage > 4573.5
-                      return [[ 686287.5]]
-                  else:  # if square_footage > 5880.0
-                    if square_footage <= 6751.5:
-                      return [[ 365450.]]
-                    else:  # if square_footage > 6751.5
-                      return [[ 606049.4]]
-                else:  # if square_footage > 7187.0
-                  return [[ 926000.]]
-              else:  # if land_value > 195000.0
-                if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                  return [[ 400000.]]
-                else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                  return [[ 281250.]]
-            else:  # if square_footage > 7622.5
-              if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                if square_footage <= 16770.0:
-                  if land_value <= 243000.0:
-                    if square_footage <= 16116.5:
-                      return [[ 764573.01]]
-                    else:  # if square_footage > 16116.5
-                      return [[ 375000.]]
-                  else:  # if land_value > 243000.0
-                    return [[ 1333333.]]
-                else:  # if square_footage > 16770.0
-                  if square_footage <= 17206.0:
-                    return [[ 2150000.]]
-                  else:  # if square_footage > 17206.0
-                    if land_use_SINGLE FAMILY <= 0.5:
-                      return [[ 430000.]]
-                    else:  # if land_use_SINGLE FAMILY > 0.5
-                      return [[ 924425.]]
-              else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                if square_footage <= 10236.0:
-                  if square_footage <= 9365.0:
-                    return [[ 1275000.]]
-                  else:  # if square_footage > 9365.0
-                    return [[ 1850000.]]
-                else:  # if square_footage > 10236.0
-                  if land_value <= 198000.0:
-                    return [[ 375000.]]
-                  else:  # if land_value > 198000.0
-                    return [[ 1700000.]]
-          else:  # if neighborhood > 2227.5
-            if land_value <= 217250.0:
-              if tax_district_CITY OF FOREST HILLS <= 0.5:
-                if neighborhood <= 4427.5:
-                  if neighborhood <= 4329.5:
-                    if square_footage <= 8058.0:
-                      return [[ 482370.7032967]]
-                    else:  # if square_footage > 8058.0
-                      return [[ 577977.65070922]]
-                  else:  # if neighborhood > 4329.5
-                    if square_footage <= 79714.5:
-                      return [[ 773200.65]]
-                    else:  # if square_footage > 79714.5
-                      return [[ 1545000.]]
-                else:  # if neighborhood > 4427.5
-                  if land_value <= 186000.0:
-                    if square_footage <= 130897.5:
-                      return [[ 401344.29787234]]
-                    else:  # if square_footage > 130897.5
-                      return [[ 157500.]]
-                  else:  # if land_value > 186000.0
-                    if tax_district_GENERAL SERVICES DISTRICT <= 0.5:
-                      return [[ 515104.28648649]]
-                    else:  # if tax_district_GENERAL SERVICES DISTRICT > 0.5
-                      return [[ 714970.58823529]]
-              else:  # if tax_district_CITY OF FOREST HILLS > 0.5
-                if land_value <= 189000.0:
-                  if square_footage <= 54667.5:
-                    return [[ 801250.]]
-                  else:  # if square_footage > 54667.5
-                    return [[ 660000.]]
-                else:  # if land_value > 189000.0
-                  return [[ 1105000.]]
-            else:  # if land_value > 217250.0
-              if square_footage <= 16770.0:
-                if neighborhood <= 3477.5:
-                  if square_footage <= 13721.0:
-                    if land_value <= 232500.0:
-                      return [[ 520815.17647059]]
-                    else:  # if land_value > 232500.0
-                      return [[ 724122.22222222]]
-                  else:  # if square_footage > 13721.0
-                    if land_use_SINGLE FAMILY <= 0.5:
-                      return [[ 381666.66666667]]
-                    else:  # if land_use_SINGLE FAMILY > 0.5
-                      return [[ 547794.65714286]]
-                else:  # if neighborhood > 3477.5
-                  if square_footage <= 8929.5:
-                    if sold_as_vacant_No <= 0.5:
-                      return [[ 315000.]]
-                    else:  # if sold_as_vacant_No > 0.5
-                      return [[ 561500.]]
-                  else:  # if square_footage > 8929.5
-                    if land_value <= 222500.0:
-                      return [[ 458580.]]
-                    else:  # if land_value > 222500.0
-                      return [[ 332133.33333333]]
-              else:  # if square_footage > 16770.0
-                if land_use_RESIDENTIAL COMBO <= 0.5:
-                  if land_value <= 220150.0:
-                    if square_footage <= 20255.0:
-                      return [[ 1275381.25]]
-                    else:  # if square_footage > 20255.0
-                      return [[ 604272.72727273]]
-                  else:  # if land_value > 220150.0
-                    if land_use_SINGLE FAMILY <= 0.5:
-                      return [[ 504167.6]]
-                    else:  # if land_use_SINGLE FAMILY > 0.5
-                      return [[ 708582.23611111]]
-                else:  # if land_use_RESIDENTIAL COMBO > 0.5
-                  if square_footage <= 433639.5:
-                    return [[ 3625000.]]
-                  else:  # if square_footage > 433639.5
-                    return [[ 330000.]]
-        else:  # if land_value > 287100.0
-          if sold_as_vacant_Yes <= 0.5:
+        if land_value <= 287750.0:
+          if land_use_GREENBELT <= 0.5:
+            if land_value <= 179600.0:
+              if neighborhood <= 2926.0:
+                if square_footage <= 7405.0:
+                  if square_footage <= 6098.0:
+                    return [[ 407600.]]
+                  else:  # if square_footage > 6098.0
+                    return [[ 516500.]]
+                else:  # if square_footage > 7405.0
+                  if square_footage <= 10454.0:
+                    if square_footage <= 9147.5:
+                      return [[ 715000.]]
+                    else:  # if square_footage > 9147.5
+                      return [[ 844750.]]
+                  else:  # if square_footage > 10454.0
+                    if land_value <= 171500.0:
+                      return [[ 750000.]]
+                    else:  # if land_value > 171500.0
+                      return [[ 561033.33333333]]
+              else:  # if neighborhood > 2926.0
+                if tax_district_CITY OF FOREST HILLS <= 0.5:
+                  if land_value <= 168400.0:
+                    if neighborhood <= 3477.5:
+                      return [[ 505500.]]
+                    else:  # if neighborhood > 3477.5
+                      return [[ 689325.]]
+                  else:  # if land_value > 168400.0
+                    if square_footage <= 12414.0:
+                      return [[ 363176.18181818]]
+                    else:  # if square_footage > 12414.0
+                      return [[ 453012.77857143]]
+                else:  # if tax_district_CITY OF FOREST HILLS > 0.5
+                  return [[ 20000.]]
+            else:  # if land_value > 179600.0
+              if sold_as_vacant_Yes <= 0.5:
+                if land_value <= 219400.0:
+                  if neighborhood <= 2226.5:
+                    if land_use_VACANT RESIDENTIAL LAND <= 0.5:
+                      return [[ 727069.07751938]]
+                    else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
+                      return [[ 1275000.]]
+                  else:  # if neighborhood > 2226.5
+                    if square_footage <= 10672.0:
+                      return [[ 534188.00348432]]
+                    else:  # if square_footage > 10672.0
+                      return [[ 615838.81895093]]
+                else:  # if land_value > 219400.0
+                  if square_footage <= 19384.0:
+                    if neighborhood <= 2276.0:
+                      return [[ 1333333.]]
+                    else:  # if neighborhood > 2276.0
+                      return [[ 583931.]]
+                  else:  # if square_footage > 19384.0
+                    if land_value <= 229000.0:
+                      return [[ 1120945.45454545]]
+                    else:  # if land_value > 229000.0
+                      return [[ 717919.74113475]]
+              else:  # if sold_as_vacant_Yes > 0.5
+                if square_footage <= 999702.0:
+                  if land_use_SINGLE FAMILY <= 0.5:
+                    if land_value <= 237850.0:
+                      return [[ 344643.09375]]
+                    else:  # if land_value > 237850.0
+                      return [[ 464415.78947368]]
+                  else:  # if land_use_SINGLE FAMILY > 0.5
+                    if neighborhood <= 2926.5:
+                      return [[ 307500.]]
+                    else:  # if neighborhood > 2926.5
+                      return [[ 716985.77777778]]
+                else:  # if square_footage > 999702.0
+                  return [[ 1450000.]]
+          else:  # if land_use_GREENBELT > 0.5
+            return [[ 3625000.]]
+        else:  # if land_value > 287750.0
+          if sold_as_vacant_No <= 0.5:
+            if land_value <= 395000.0:
+              if neighborhood <= 2676.5:
+                if neighborhood <= 1126.0:
+                  return [[ 275000.]]
+                else:  # if neighborhood > 1126.0
+                  return [[ 1150000.]]
+              else:  # if neighborhood > 2676.5
+                if tax_district_CITY OF OAK HILL <= 0.5:
+                  if square_footage <= 121532.0:
+                    if square_footage <= 109770.5:
+                      return [[ 451946.33333333]]
+                    else:  # if square_footage > 109770.5
+                      return [[ 999000.]]
+                  else:  # if square_footage > 121532.0
+                    if land_value <= 354000.0:
+                      return [[ 296429.]]
+                    else:  # if land_value > 354000.0
+                      return [[ 310000.]]
+                else:  # if tax_district_CITY OF OAK HILL > 0.5
+                  if land_value <= 344450.0:
+                    if land_value <= 305000.0:
+                      return [[ 353500.]]
+                    else:  # if land_value > 305000.0
+                      return [[ 359525.]]
+                  else:  # if land_value > 344450.0
+                    if land_value <= 381600.0:
+                      return [[ 250000.]]
+                    else:  # if land_value > 381600.0
+                      return [[ 275000.]]
+            else:  # if land_value > 395000.0
+              if land_value <= 401300.0:
+                if square_footage <= 180555.5:
+                  return [[ 2100000.]]
+                else:  # if square_footage > 180555.5
+                  return [[ 665000.]]
+              else:  # if land_value > 401300.0
+                if neighborhood <= 3076.0:
+                  return [[ 925000.]]
+                else:  # if neighborhood > 3076.0
+                  if city_BRENTWOOD <= 0.5:
+                    if square_footage <= 139609.0:
+                      return [[ 547250.]]
+                    else:  # if square_footage > 139609.0
+                      return [[ 630000.]]
+                  else:  # if city_BRENTWOOD > 0.5
+                    return [[ 424500.]]
+          else:  # if sold_as_vacant_No > 0.5
             if land_value <= 335400.0:
-              if neighborhood <= 9528.5:
+              if tax_district_CITY OF OAK HILL <= 0.5:
                 if neighborhood <= 3227.5:
                   if land_value <= 315000.0:
-                    if land_value <= 290250.0:
-                      return [[ 1312116.66666667]]
-                    else:  # if land_value > 290250.0
-                      return [[ 787474.75]]
+                    if square_footage <= 65993.0:
+                      return [[ 779979.8]]
+                    else:  # if square_footage > 65993.0
+                      return [[ 1302262.5]]
                   else:  # if land_value > 315000.0
                     if land_value <= 323000.0:
                       return [[ 3085000.]]
@@ -620,212 +631,209 @@ def tree(land_value, neighborhood, square_footage, land_use_CHURCH, land_use_DOR
                       return [[ 1250000.]]
                 else:  # if neighborhood > 3227.5
                   if land_use_CHURCH <= 0.5:
-                    if tax_district_CITY OF FOREST HILLS <= 0.5:
-                      return [[ 810726.4]]
-                    else:  # if tax_district_CITY OF FOREST HILLS > 0.5
-                      return [[ 653172.22222222]]
+                    if neighborhood <= 4327.5:
+                      return [[ 831364.175]]
+                    else:  # if neighborhood > 4327.5
+                      return [[ 682532.49230769]]
                   else:  # if land_use_CHURCH > 0.5
                     return [[ 2000000.]]
-              else:  # if neighborhood > 9528.5
+              else:  # if tax_district_CITY OF OAK HILL > 0.5
                 if land_value <= 296350.0:
-                  if square_footage <= 74269.5:
-                    return [[ 1145000.]]
-                  else:  # if square_footage > 74269.5
-                    return [[ 3300000.]]
+                  return [[ 3300000.]]
                 else:  # if land_value > 296350.0
-                  if land_value <= 298650.0:
-                    return [[ 500000.]]
-                  else:  # if land_value > 298650.0
-                    if land_value <= 312450.0:
-                      return [[ 1333636.36363636]]
-                    else:  # if land_value > 312450.0
+                  if land_value <= 306450.0:
+                    if square_footage <= 78190.0:
+                      return [[ 500000.]]
+                    else:  # if square_footage > 78190.0
+                      return [[ 767000.]]
+                  else:  # if land_value > 306450.0
+                    if land_value <= 313350.0:
+                      return [[ 1391987.5]]
+                    else:  # if land_value > 313350.0
                       return [[ 610000.]]
             else:  # if land_value > 335400.0
-              if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                if square_footage <= 22868.5:
-                  if land_value <= 355000.0:
-                    if square_footage <= 22433.0:
-                      return [[ 1123333.33333333]]
-                    else:  # if square_footage > 22433.0
-                      return [[ 518750.]]
-                  else:  # if land_value > 355000.0
-                    if land_use_SINGLE FAMILY <= 0.5:
-                      return [[ 523333.33333333]]
-                    else:  # if land_use_SINGLE FAMILY > 0.5
-                      return [[ 768276.92307692]]
-                else:  # if square_footage > 22868.5
-                  if neighborhood <= 6376.5:
-                    if tax_district_CITY OF FOREST HILLS <= 0.5:
-                      return [[ 1043093.69491525]]
-                    else:  # if tax_district_CITY OF FOREST HILLS > 0.5
-                      return [[ 2595000.]]
-                  else:  # if neighborhood > 6376.5
-                    if square_footage <= 52489.5:
-                      return [[ 1091907.45454545]]
-                    else:  # if square_footage > 52489.5
-                      return [[ 875729.15254237]]
-              else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                if square_footage <= 115216.0:
-                  if neighborhood <= 9377.5:
-                    if square_footage <= 70785.0:
-                      return [[ 499500.]]
-                    else:  # if square_footage > 70785.0
-                      return [[ 420000.]]
-                  else:  # if neighborhood > 9377.5
-                    return [[ 2350000.]]
-                else:  # if square_footage > 115216.0
-                  return [[ 5000000.]]
-          else:  # if sold_as_vacant_Yes > 0.5
-            if land_value <= 395000.0:
-              if square_footage <= 458250.5:
-                if land_value <= 320500.0:
-                  if neighborhood <= 4378.5:
-                    if neighborhood <= 3778.0:
-                      return [[ 401250.]]
-                    else:  # if neighborhood > 3778.0
-                      return [[ 447329.14285714]]
-                  else:  # if neighborhood > 4378.5
-                    if square_footage <= 87337.5:
-                      return [[ 347139.28571429]]
-                    else:  # if square_footage > 87337.5
-                      return [[ 402800.]]
-                else:  # if land_value > 320500.0
-                  if land_value <= 323500.0:
-                    if square_footage <= 59677.0:
-                      return [[ 436000.]]
-                    else:  # if square_footage > 59677.0
-                      return [[ 683333.33333333]]
-                  else:  # if land_value > 323500.0
-                    if square_footage <= 118918.5:
-                      return [[ 465041.85714286]]
-                    else:  # if square_footage > 118918.5
-                      return [[ 305000.]]
-              else:  # if square_footage > 458250.5
-                if neighborhood <= 6180.0:
-                  return [[ 1600000.]]
-                else:  # if neighborhood > 6180.0
-                  return [[ 900000.]]
-            else:  # if land_value > 395000.0
-              if land_value <= 401300.0:
-                if tax_district_CITY OF FOREST HILLS <= 0.5:
-                  return [[ 665000.]]
-                else:  # if tax_district_CITY OF FOREST HILLS > 0.5
-                  return [[ 2100000.]]
-              else:  # if land_value > 401300.0
-                if neighborhood <= 3876.0:
-                  if square_footage <= 31362.5:
-                    return [[ 1400000.]]
-                  else:  # if square_footage > 31362.5
-                    return [[ 925000.]]
-                else:  # if neighborhood > 3876.0
-                  if city_BRENTWOOD <= 0.5:
-                    if square_footage <= 139609.0:
-                      return [[ 529666.66666667]]
-                    else:  # if square_footage > 139609.0
-                      return [[ 622500.]]
-                  else:  # if city_BRENTWOOD > 0.5
-                    return [[ 450000.]]
+              if square_footage <= 89079.5:
+                if square_footage <= 41599.5:
+                  if land_value <= 345800.0:
+                    if square_footage <= 29620.5:
+                      return [[ 1215857.14285714]]
+                    else:  # if square_footage > 29620.5
+                      return [[ 904996.27272727]]
+                  else:  # if land_value > 345800.0
+                    if square_footage <= 41164.0:
+                      return [[ 849042.74626866]]
+                    else:  # if square_footage > 41164.0
+                      return [[ 596000.]]
+                else:  # if square_footage > 41599.5
+                  if square_footage <= 44430.5:
+                    if square_footage <= 42470.5:
+                      return [[ 961666.66666667]]
+                    else:  # if square_footage > 42470.5
+                      return [[ 2000000.]]
+                  else:  # if square_footage > 44430.5
+                    if city_OLD HICKORY <= 0.5:
+                      return [[ 925450.36666667]]
+                    else:  # if city_OLD HICKORY > 0.5
+                      return [[ 1700000.]]
+              else:  # if square_footage > 89079.5
+                if neighborhood <= 5483.0:
+                  if tax_district_URBAN SERVICES DISTRICT <= 0.5:
+                    if square_footage <= 99316.5:
+                      return [[ 2542500.]]
+                    else:  # if square_footage > 99316.5
+                      return [[ 3850000.]]
+                  else:  # if tax_district_URBAN SERVICES DISTRICT > 0.5
+                    if land_use_CHURCH <= 0.5:
+                      return [[ 1375000.]]
+                    else:  # if land_use_CHURCH > 0.5
+                      return [[ 950000.]]
+                else:  # if neighborhood > 5483.0
+                  if square_footage <= 92782.5:
+                    if land_value <= 399150.0:
+                      return [[ 1230000.]]
+                    else:  # if land_value > 399150.0
+                      return [[ 2120000.]]
+                  else:  # if square_footage > 92782.5
+                    if land_use_CHURCH <= 0.5:
+                      return [[ 827666.25]]
+                    else:  # if land_use_CHURCH > 0.5
+                      return [[ 2000000.]]
       else:  # if square_footage > 1492801.0
         return [[ 12350000.]]
-    else:  # if land_value > 450500.0
-      if land_value <= 1699150.0:
-        if land_value <= 948900.0:
-          if sold_as_vacant_No <= 0.5:
-            if square_footage <= 375051.0:
-              if square_footage <= 184694.0:
-                if land_value <= 491900.0:
-                  if tax_district_CITY OF FOREST HILLS <= 0.5:
-                    return [[ 450000.]]
-                  else:  # if tax_district_CITY OF FOREST HILLS > 0.5
-                    if square_footage <= 119789.5:
-                      return [[ 300000.]]
-                    else:  # if square_footage > 119789.5
-                      return [[ 315000.]]
-                else:  # if land_value > 491900.0
-                  if land_value <= 503450.0:
-                    return [[ 2100000.]]
-                  else:  # if land_value > 503450.0
+    else:  # if land_value > 450300.0
+      if land_value <= 946500.0:
+        if square_footage <= 30709.5:
+          if land_value <= 585900.0:
+            if land_value <= 476050.0:
+              if square_footage <= 20255.0:
+                if square_footage <= 19383.5:
+                  return [[ 532500.]]
+                else:  # if square_footage > 19383.5
+                  return [[ 612500.]]
+              else:  # if square_footage > 20255.0
+                if sold_as_vacant_Yes <= 0.5:
+                  return [[ 498000.]]
+                else:  # if sold_as_vacant_Yes > 0.5
+                  return [[ 450000.]]
+            else:  # if land_value > 476050.0
+              if square_footage <= 24175.5:
+                if square_footage <= 23304.5:
+                  if square_footage <= 20255.0:
+                    if square_footage <= 19383.5:
+                      return [[ 1054743.75]]
+                    else:  # if square_footage > 19383.5
+                      return [[ 677000.]]
+                  else:  # if square_footage > 20255.0
+                    if land_value <= 504550.0:
+                      return [[ 1330000.]]
+                    else:  # if land_value > 504550.0
+                      return [[ 860000.]]
+                else:  # if square_footage > 23304.5
+                  return [[ 1600000.]]
+              else:  # if square_footage > 24175.5
+                if land_value <= 548800.0:
+                  if land_value <= 512700.0:
+                    if square_footage <= 25046.5:
+                      return [[ 780000.]]
+                    else:  # if square_footage > 25046.5
+                      return [[ 856666.66666667]]
+                  else:  # if land_value > 512700.0
+                    return [[ 660000.]]
+                else:  # if land_value > 548800.0
+                  return [[ 1000000.]]
+          else:  # if land_value > 585900.0
+            if square_footage <= 29184.5:
+              return [[ 1100000.]]
+            else:  # if square_footage > 29184.5
+              if square_footage <= 29838.0:
+                return [[ 2032500.]]
+              else:  # if square_footage > 29838.0
+                return [[ 1750000.]]
+        else:  # if square_footage > 30709.5
+          if square_footage <= 390950.5:
+            if square_footage <= 139827.0:
+              if land_value <= 634850.0:
+                if land_use_VACANT RESIDENTIAL LAND <= 0.5:
+                  if land_value <= 485900.0:
+                    if square_footage <= 82981.5:
+                      return [[ 675000.]]
+                    else:  # if square_footage > 82981.5
+                      return [[ 971600.]]
+                  else:  # if land_value > 485900.0
                     if tax_district_CITY OF OAK HILL <= 0.5:
-                      return [[ 596200.]]
+                      return [[ 1128024.42307692]]
                     else:  # if tax_district_CITY OF OAK HILL > 0.5
-                      return [[ 1058750.]]
-              else:  # if square_footage > 184694.0
-                if land_value <= 757550.0:
-                  if land_value <= 516200.0:
-                    return [[ 1300000.]]
-                  else:  # if land_value > 516200.0
-                    return [[ 2100000.]]
-                else:  # if land_value > 757550.0
-                  return [[ 804800.]]
-            else:  # if square_footage > 375051.0
-              if neighborhood <= 9377.5:
-                if tax_district_URBAN SERVICES DISTRICT <= 0.5:
-                  return [[ 424500.]]
-                else:  # if tax_district_URBAN SERVICES DISTRICT > 0.5
-                  return [[ 580000.]]
-              else:  # if neighborhood > 9377.5
-                return [[ 250623.]]
-          else:  # if sold_as_vacant_No > 0.5
-            if square_footage <= 140045.0:
-              if land_value <= 521200.0:
-                if land_use_SINGLE FAMILY <= 0.5:
-                  return [[ 3000000.]]
-                else:  # if land_use_SINGLE FAMILY > 0.5
-                  if square_footage <= 83635.0:
-                    if square_footage <= 33976.5:
-                      return [[ 994031.81818182]]
-                    else:  # if square_footage > 33976.5
-                      return [[ 698538.]]
-                  else:  # if square_footage > 83635.0
-                    if land_value <= 457500.0:
-                      return [[ 2108333.33333333]]
-                    else:  # if land_value > 457500.0
-                      return [[ 1064625.]]
-              else:  # if land_value > 521200.0
-                if tax_district_CITY OF OAK HILL <= 0.5:
-                  if land_value <= 575450.0:
-                    if land_value <= 570900.0:
-                      return [[ 1164948.125]]
-                    else:  # if land_value > 570900.0
-                      return [[ 635000.]]
-                  else:  # if land_value > 575450.0
-                    if square_footage <= 46826.5:
-                      return [[ 1630020.02777778]]
-                    else:  # if square_footage > 46826.5
-                      return [[ 1419781.7]]
-                else:  # if tax_district_CITY OF OAK HILL > 0.5
-                  if square_footage <= 127630.5:
-                    if land_value <= 545100.0:
-                      return [[ 2266666.66666667]]
-                    else:  # if land_value > 545100.0
-                      return [[ 3000000.]]
-                  else:  # if square_footage > 127630.5
-                    if land_value <= 547100.0:
-                      return [[ 1060000.]]
-                    else:  # if land_value > 547100.0
-                      return [[ 1640000.]]
-            else:  # if square_footage > 140045.0
-              if square_footage <= 170973.0:
-                if land_use_SINGLE FAMILY <= 0.5:
-                  if land_use_VACANT RESIDENTIAL LAND <= 0.5:
-                    return [[ 3535000.]]
-                  else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
-                    return [[ 2760000.]]
-                else:  # if land_use_SINGLE FAMILY > 0.5
-                  if land_value <= 505100.0:
-                    if land_value <= 486350.0:
-                      return [[ 2305000.]]
-                    else:  # if land_value > 486350.0
-                      return [[ 4500000.]]
-                  else:  # if land_value > 505100.0
-                    if neighborhood <= 9126.0:
-                      return [[ 2000000.]]
-                    else:  # if neighborhood > 9126.0
-                      return [[ 837500.]]
-              else:  # if square_footage > 170973.0
-                if land_value <= 792800.0:
-                  if land_value <= 549100.0:
-                    if neighborhood <= 9528.0:
-                      return [[ 1127916.66666667]]
-                    else:  # if neighborhood > 9528.0
-                      return [[ 660000.]]
+                      return [[ 1652583.33333333]]
+                else:  # if land_use_VACANT RESIDENTIAL LAND > 0.5
+                  if land_value <= 475400.0:
+                    return [[ 3000000.]]
+                  else:  # if land_value > 475400.0
+                    if sold_as_vacant_Yes <= 0.5:
+                      return [[ 2350000.]]
+                    else:  # if sold_as_vacant_Yes > 0.5
+                      return [[ 2100000.]]
+              else:  # if land_value > 634850.0
+                if sold_as_vacant_Yes <= 0.5:
+                  if square_footage <= 36372.0:
+                    if square_footage <= 35936.5:
+                      return [[ 1746480.]]
+                    else:  # if square_footage > 35936.5
+                      return [[ 2700000.]]
+                  else:  # if square_footage > 36372.0
+                    if square_footage <= 49440.0:
+                      return [[ 1470975.66666667]]
+                    else:  # if square_footage > 49440.0
+                      return [[ 1670727.875]]
+                else:  # if sold_as_vacant_Yes > 0.5
+                  if square_footage <= 45955.0:
+                    return [[ 950000.]]
+                  else:  # if square_footage > 45955.0
+                    return [[ 865000.]]
+            else:  # if square_footage > 139827.0
+              if square_footage <= 154202.0:
+                if square_footage <= 144836.5:
+                  if tax_district_CITY OF OAK HILL <= 0.5:
+                    return [[ 2000000.]]
+                  else:  # if tax_district_CITY OF OAK HILL > 0.5
+                    return [[ 2700000.]]
+                else:  # if square_footage > 144836.5
+                  if tax_district_CITY OF FOREST HILLS <= 0.5:
+                    return [[ 3499000.]]
+                  else:  # if tax_district_CITY OF FOREST HILLS > 0.5
+                    return [[ 4500000.]]
+              else:  # if square_footage > 154202.0
+                if land_use_DUPLEX <= 0.5:
+                  if square_footage <= 203642.5:
+                    if land_value <= 478100.0:
+                      return [[ 2311250.]]
+                    else:  # if land_value > 478100.0
+                      return [[ 1114906.25]]
+                  else:  # if square_footage > 203642.5
+                    if square_footage <= 226076.0:
+                      return [[ 3133000.]]
+                    else:  # if square_footage > 226076.0
+                      return [[ 1580960.]]
+                else:  # if land_use_DUPLEX > 0.5
+                  return [[ 3535000.]]
+          else:  # if square_footage > 390950.5
+            if neighborhood <= 9377.5:
+              if city_NASHVILLE <= 0.5:
+                return [[ 424500.]]
+              else:  # if city_NASHVILLE > 0.5
+                return [[ 500000.]]
+            else:  # if neighborhood > 9377.5
+              return [[ 250623.]]
+      else:  # if land_value > 946500.0
+        if land_value <= 1100600.0:
+          if square_footage <= 59459.0:
+            return [[ 1200000.]]
+          else:  # if square_footage > 59459.0
+            if square_footage <= 65557.5:
+              if square_footage <= 62508.5:
+                return [[ 4300000.]]
+              else:  # if square_footage > 62508.5
+                return [[ 3325000.]]
+            else:  # if square_footage > 65557.5
+              if square_footage <= 105633.0:
+                if square_footage <= 87555.0:
+                  if land_value <= 975050.0:
