@@ -1,3 +1,33 @@
 body {
-    background: yellow
+    background-image:url('images/bg.jpeg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    margin:0;
+    font-size:14px;
+    font-family:Verdana;
 }
+
+
+
+#form{
+
+    height: 200px;
+    width: 400px;
+    color:white;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    margin-top: -100px;
+    margin-left: -200px;
+    list-style-type: none;
+
+}
+
+
+select, input{
+      width:195px;
+      box-sizing:border-box;
+      color:black;
+      background-color:white;
+      border-color:transparent;
+ }

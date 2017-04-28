@@ -8,11 +8,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 </head>
 <body>
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_ul }}
-    <input type="submit" value="Submit" />
-</form>
+<div id="form">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit" value="Submit" />
+    </form>
+</div>
 
 {% if predicted_value %}
 <p> The Predicted value for your house is {{ predicted_value }}</p>
