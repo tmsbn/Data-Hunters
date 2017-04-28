@@ -27,6 +27,8 @@ def index(request):
 
         # check whether it's valid:
         if form.is_valid():
+
+            print('got request again!')
             # process the data in form.cleaned_data as required
             predicted_value = ps.get_prediction(form.cleaned_data, PREDICTION_MODEL, DF_DUMMIES)
 
