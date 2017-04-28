@@ -3,16 +3,16 @@ from predictor.models import HouseData
 
 
 class HouseForm(forms.Form):
-
-    blank_choice = (('', '---------'),)
-
     land_use = forms.ChoiceField(label='',
                                  required=True,
-                                 choices=[('', 'Land Use')] + list(HouseData.objects.values_list('land_use', 'land_use').distinct()))
+                                 choices=[('', 'Land Use')] + list(
+                                     HouseData.objects.values_list('land_use', 'land_use').distinct()))
 
     sold_as_vacant = forms.ChoiceField(label='',
                                        required=True,
-                                       choices=[('', 'Sold as Vacant')] + list(HouseData.objects.values_list('sold_as_vacant', 'sold_as_vacant').distinct()))
+                                       choices=[('', 'Sold as Vacant')] + list(
+                                           HouseData.objects.values_list('sold_as_vacant',
+                                                                         'sold_as_vacant').distinct()))
 
     city = forms.ChoiceField(label='',
                              required=True,
@@ -26,11 +26,14 @@ class HouseForm(forms.Form):
 
     tax_district = forms.ChoiceField(label='',
                                      required=True,
-                                     choices=[('', 'Tax District')] + list(HouseData.objects.values_list('tax_district', 'tax_district').distinct()))
+                                     choices=[('', 'Tax District')] + list(
+                                         HouseData.objects.values_list('tax_district', 'tax_district').distinct()))
 
     neighborhood = forms.ChoiceField(label='',
                                      required=True,
-                                     choices=[('', 'Neighborhood')] + list(HouseData.objects.values_list('neighborhood', 'neighborhood').distinct().order_by('neighborhood')))
+                                     choices=[('', 'Neighborhood')] + list(HouseData.objects.values_list('neighborhood',
+                                                                                                         'neighborhood').distinct().order_by(
+                                         'neighborhood')))
 
     land_value = forms.IntegerField(required=True,
                                     label='',
@@ -39,8 +42,4 @@ class HouseForm(forms.Form):
                                     widget=forms.TextInput(attrs={'placeholder': 'Land value'}))
 
     def __init__(self, *args, **kwargs):
-
         super(HouseForm, self).__init__(*args, **kwargs)
-
-
-
