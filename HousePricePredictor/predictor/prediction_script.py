@@ -7,24 +7,36 @@ dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district']
 target_columns = 'sales_price'
 
 ranges = {
-    'Land Use': (4, 19),
-    'Sold As Vacant': (20, 21),
-    'City': (22, 31),
-    'Square Footage': (0, 0),
-    'Tax District': (32, 38),
-    'Neighborhood': (1, 1),
-    'Land Value': (2, 2),
-    'Sale Price': (3, 3)
+    'land_use': (4, 19),
+    'sold_as_vacant': (20, 21),
+    'city': (22, 31),
+    'square_footage': (0, 0),
+    'tax_district': (32, 38),
+    'neighborhood': (1, 1),
+    'land_value': (2, 2),
+    'sales_price': (3, 3)
 }
 
 
-def get_prediction(cleaned_data, model, df_dummies):
-    print(cleaned_data)
-    print(df_dummies)
-
-    predicted_value = 100
-
-    return predicted_value
+def get_prediction(cleaned_data, model, df):
+    predict_list = []
+    digit_values = []
+    for idx, col in enumerate(ranges.keys()):
+        if col == target_columns:
+            continue
+        x, y = ranges[col]
+        domain = df.columns.values[x: y + 1]
+        if not type(cleaned_data[col]) is int:
+            for val in domain:
+                # val = val.split('_')[1]
+                if val == cleaned_data[col]:
+                    predict_list.append(1)
+                else:
+                    predict_list.append(0)
+        else:
+            digit_values.append(cleaned_data[col])
+    predicted_values = model.predict([digit_values + predict_list])
+    return predicted_values[0]
 
 
 def get_choices():
@@ -74,7 +86,7 @@ def build_model(house_data):
     clf = model.fit(df_input_values, df_target_values)
 
     predicted_values = clf.predict(df_predict_values)
-    ranges_count = proportion_range_generator(actual_values, predicted_values)
-    print(ranges_count)
+    # ranges_count = proportion_range_generator(actual_values, predicted_values)
+    print(df_dummies)
 
-    return model, df_dummies
+    return clf, df_dummies
