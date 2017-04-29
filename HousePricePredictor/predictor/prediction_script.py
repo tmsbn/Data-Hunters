@@ -97,16 +97,9 @@ def build_model(house_data):
 
     model = DecisionTreeRegressor(max_depth=10)
     fitted_model = model.fit(df_input_values, df_target_values)
-    print('Creating Rules in Rule.txt')
-
-    opfile = open('Rule.txt', 'w')
-
-    tree_to_code(model.tree_, df_test.columns.values, opfile)
-    print('Rules created.')
 
     predicted_values = fitted_model.predict(df_predict_values)
-
-    # ranges_count = proportion_range_generator(actual_values, predicted_values)
+    ranges_count = proportion_range_generator(actual_values, predicted_values)
 
     return fitted_model, df_dummies
 
