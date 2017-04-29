@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import _tree
 from collections import Counter
 
@@ -9,12 +10,12 @@ dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district', 'neighb
 target_column = 'sales_price'
 
 ranges = {
-    'land_use': (3, 18),
-    'sold_as_vacant': (19, 20),
-    'city': (21, 30),
-    'tax_district': (31, 37),
+    'land_use': (3, 19),
+    'sold_as_vacant': (20, 21),
+    'city': (22, 31),
+    'tax_district': (32, 38),
     'square_footage': (2, 2),
-    'neighborhood': (38, 212),
+    'neighborhood': (39, 217),
     'land_value': (0, 0),
     'sales_price': (1, 1)
 }
@@ -51,7 +52,7 @@ def get_choices():
     choices_dict = {}
 
 
-def proportion_range_generator(actual, predicted):
+def proportion_range_generator(actual, predicted, n):
     ranges_count = {'Excellent': 0, 'Good': 0, 'Ok': 0, 'Bad': 0}
     for i in range(len(actual)):
         proportion = actual[i] / predicted[i]
@@ -64,7 +65,18 @@ def proportion_range_generator(actual, predicted):
         else:
             ranges_count['Bad'] += 1
 
+    ranges_count['Excellent'] = ranges_count['Excellent']/ n * 100
+    ranges_count['Good'] = ranges_count['Good'] / n * 100
+    ranges_count['Ok'] = ranges_count['Ok'] / n * 100
+    ranges_count['Bad'] = ranges_count['Bad'] / n * 100
+
     return ranges_count
+
+
+def range_check(df_dummies):
+    print("Range check:")
+    for i in range(len(df_dummies.columns.values)):
+        print(i, df_dummies.columns.values[i])
 
 
 def build_model(house_data):
@@ -82,11 +94,14 @@ def build_model(house_data):
     # Convert categorical variables using One Hot Shot Encoding
     df_dummies = pd.get_dummies(df, columns=dummies_columns)
 
+    range_check(df_dummies)
+
     # Split data into training and testing set
     df_train, df_test = train_test_split(df_dummies, test_size=0.3)
     # print(df_test)
     # Remove the target column from the training data set
     df_target_values = df_train[target_column].values
+
     del df_train[target_column]
     df_input_values = df_train.values
 
@@ -95,11 +110,14 @@ def build_model(house_data):
     del df_test[target_column]
     df_predict_values = df_test.values
 
-    model = DecisionTreeRegressor(max_depth=10)
+    print("Testing length:" + str(len(df_target_values)))
+
+    model = DecisionTreeRegressor()
     fitted_model = model.fit(df_input_values, df_target_values)
 
     predicted_values = fitted_model.predict(df_predict_values)
-    ranges_count = proportion_range_generator(actual_values, predicted_values)
+    ranges_count = proportion_range_generator(actual_values, predicted_values, len(predicted_values))
+    print(ranges_count)
 
     return fitted_model, df_dummies
 
