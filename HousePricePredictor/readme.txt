@@ -1,3 +1,5 @@
+____________________________________
+
 PLEASE FOLLOW THE INSTRUCTIONS TO RUN THE HOUSE PRICE PREDICTOR DJANGO APPLICATION
 ____________________________________
 
@@ -20,6 +22,20 @@ Instructions to Run:
 4. The website will be accessible on 'localhost:8000/predictor' on your browser.
 5. For portability, this application is setup to use sql_lite by default, although the
 application can be configured to use MYSQL.
+
+_____________________________________
+
+Instructions to Use:
+
+1. Choose "Land Use".
+2. Choose "Sold as Vacant".
+3. Choose "City".
+4. Enter "Square Footage" to a maximum of 1,000,000 sq. ft.
+5. Choose "Tax District".
+6. Choose "Neighborhood".
+7. Enter "Land Value" to a maximum $1,000,000.
+8. Click the "Submit" button.
+9. The predicted value will be displayed in the white box bellow.
 
 _____________________________________
 
