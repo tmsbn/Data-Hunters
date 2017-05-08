@@ -1,9 +1,17 @@
+"""
+This file contains the functions to read the data from the dataframe and perform the prediction.
+authors: @Thomas Binu, Ruzan Sasuri, Mayank Panday
+"""
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.tree import _tree
+from sklearn.metrics import mean_squared_error
 from collections import Counter
+
 
 PRIMARY_KEY_COL = 'no'
 dummies_columns = ['land_use', 'sold_as_vacant', 'city', 'tax_district', 'neighborhood']
@@ -22,10 +30,19 @@ ranges = {
 
 
 def get_prediction(cleaned_data, model, df):
+
+    """
+    Convert the input data into One Hot Shot Encoding
+    :param cleaned_data:
+    :param model:
+    :param df:
+    :return:
+    """
+
     predict_list = []
     digit_values = []
 
-    print(df)
+    # print(df)
 
     for idx, col in enumerate(ranges.keys()):
 
@@ -44,15 +61,19 @@ def get_prediction(cleaned_data, model, df):
         else:
             digit_values.append(cleaned_data[col])
     predicted_values = model.predict([digit_values + predict_list])
-    print(predicted_values)
-    return predicted_values[0]
-
-
-def get_choices():
-    choices_dict = {}
+    print('Predicted Value' , predicted_values)
+    return round(predicted_values[0], 2)
 
 
 def proportion_range_generator(actual, predicted, n):
+
+    """
+    Generate the percentage accuracy for the prediction
+    :param actual:
+    :param predicted:
+    :param n:
+    :return:
+    """
     ranges_count = {'Excellent': 0, 'Good': 0, 'Ok': 0, 'Bad': 0}
     for i in range(len(actual)):
         proportion = actual[i] / predicted[i]
@@ -79,14 +100,33 @@ def range_check(df_dummies):
         print(i, df_dummies.columns.values[i])
 
 
+def feature_importance(model, column_names):
+
+    if type(model) is RandomForestRegressor:
+        importance = model.feature_importances_
+        sorted_importance = sorted(importance, reverse=True)
+        sorted_importance_str = []
+        # print(column_names)
+        for idx, imp in enumerate(sorted_importance):
+
+            if idx < 10:
+                sorted_importance_str.append(
+                    column_names.tolist()[importance.tolist().index(imp)] + ": " + str(round(imp, 2) * 100.0))
+
+        return ','.join(sorted_importance_str)
+    return 'No attribute importance information'
+
+
 def build_model(house_data):
+
+    """
+    Build the prediction model using the house data
+    :param house_data:
+    :return:
+    """
+
     # Read the data Frame -
     df = pd.DataFrame(house_data)
-    # counter = Counter(df['neighborhood'].values)
-    # print(counter)
-    #
-    # for key, value in counter.most_common():
-    #     print(key, end=',')
 
     # Delete the primary key column
     del df[PRIMARY_KEY_COL]
@@ -94,11 +134,11 @@ def build_model(house_data):
     # Convert categorical variables using One Hot Shot Encoding
     df_dummies = pd.get_dummies(df, columns=dummies_columns)
 
-    range_check(df_dummies)
+    # range_check(df_dummies)
 
     # Split data into training and testing set
     df_train, df_test = train_test_split(df_dummies, test_size=0.3)
-    # print(df_test)
+
     # Remove the target column from the training data set
     df_target_values = df_train[target_column].values
 
@@ -107,22 +147,37 @@ def build_model(house_data):
 
     # Remove the target column from the testing data set
     actual_values = df_test[target_column].values
+
     del df_test[target_column]
     df_predict_values = df_test.values
 
-    print("Testing length:" + str(len(df_target_values)))
+    # print("Testing length:" + str(len(df_target_values)))
 
-    model = DecisionTreeRegressor()
+    model = RandomForestRegressor()
     fitted_model = model.fit(df_input_values, df_target_values)
 
     predicted_values = fitted_model.predict(df_predict_values)
+    print('Root Mean Squared Error', mean_squared_error(actual_values, predicted_values))
+
     ranges_count = proportion_range_generator(actual_values, predicted_values, len(predicted_values))
     print(ranges_count)
+
+    print(feature_importance(model, df_test.columns.values))
 
     return fitted_model, df_dummies
 
 
 def tree_to_code(tree_, feature_names, ofile):
+
+
+    """
+    Generate the rules for the given decision tree
+    :param tree_:
+    :param feature_names:
+    :param ofile:
+    :return:
+    """
+
     feature_name = [
         feature_names[i] if i != _tree.TREE_UNDEFINED else "undefined!"
         for i in tree_.feature

@@ -1,7 +1,7 @@
 from django import forms
 from predictor.models import HouseData
 
-
+# Form data for web page
 class HouseForm(forms.Form):
     land_use = forms.ChoiceField(label='',
                                  required=True,
@@ -22,7 +22,7 @@ class HouseForm(forms.Form):
                                         widget=forms.TextInput(attrs={'placeholder': 'square footage'}),
                                         required=True,
                                         min_value=0,
-                                        max_value=100000)
+                                        max_value=1000000)
 
     tax_district = forms.ChoiceField(label='',
                                      required=True,
@@ -38,7 +38,7 @@ class HouseForm(forms.Form):
     land_value = forms.IntegerField(required=True,
                                     label='',
                                     min_value=0,
-                                    max_value=100000,
+                                    max_value=1000000,
                                     widget=forms.TextInput(attrs={'placeholder': 'Land value'}))
 
     def __init__(self, *args, **kwargs):
